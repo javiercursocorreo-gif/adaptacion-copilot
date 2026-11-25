@@ -27,8 +27,8 @@ class NumberedCanvas(canvas.Canvas):
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor("#64748b"))
         # Header
-        self.drawString(36, 810, "GUÍA DE ARQUITECTURA Y GOBERNANZA · COPILOT & GITLAB")
-        self.drawRightString(559, 810, "RECURSOS Y DESCARGAS OFICIALES")
+        self.drawString(36, 810, "MARCO DE GOBERNANZA Y ARQUITECTURA CON COPILOT")
+        self.drawRightString(559, 810, "ENTREGABLES OFICIALES")
         self.setStrokeColor(colors.HexColor("#cbd5e1"))
         self.setLineWidth(0.5)
         self.line(36, 804, 559, 804)
@@ -40,8 +40,7 @@ class NumberedCanvas(canvas.Canvas):
 
 def build_pdf():
     base_dir = "/Users/externo/Library/Mobile Documents/com~apple~CloudDocs/PERSONAL/CLASES DE TECNOLOGÍA/00. ADAPTACION_EMPRESA_COPILOT"
-    pdf_path = os.path.join(base_dir, "ACCESO_Y_DESCARGAS_COPILOT.pdf")
-    pdf_copy_path = os.path.join(base_dir, "ENLACES_ACCESO_COPILOT.pdf")
+    pdf_path = os.path.join(base_dir, "MARCO_DE_GOBERNANZA_Y_ARQUITECTURA_CON_COPILOT.pdf")
     
     doc = SimpleDocTemplate(
         pdf_path,
@@ -131,13 +130,13 @@ def build_pdf():
     story.append(Spacer(1, 4))
 
     # Intro
-    intro_p = ("Esta ficha centraliza los <b>dos únicos recursos oficiales</b> preparados para consultoría estratégica y de negocio. "
+    intro_p = ("Esta ficha ejecutiva centraliza los <b>dos únicos recursos oficiales</b> preparados para consultoría estratégica y de negocio. "
                "Permite implementar gobernanza estricta en <b>Copilot</b> dentro de <b>VS Code</b> sobre repositorios "
-               "corporativos en <b>GitLab</b>, garantizando aislamiento total del puesto de trabajo y reversión en 5 segundos.")
+               "corporativos en <b>GitLab</b>, garantizando aislamiento total del puesto de trabajo corporativo y reversión garantizada en 5 segundos.")
     story.append(Paragraph(intro_p, intro_style))
     story.append(Spacer(1, 6))
 
-    # Table with ONLY the first 2 links
+    # Table with the 2 direct download links
     story.append(Paragraph("📋 Recursos Oficiales Directos (Descarga en 1 Clic)", h2_style))
 
     pages_base = "https://javiercursocorreo-gif.github.io/adaptacion-copilot"
@@ -207,7 +206,7 @@ def build_pdf():
 
     # Security Guarantee Box
     sec_html = ("<b>🛡️ Garantía de Seguridad y Cumplimiento de TI Corporativo:</b><br/>"
-                "• <b>Cero alteración de directivas corporativas:</b> Los parámetros se aplican exclusivamente a nivel de carpeta local (<code>.vscode/settings.json</code>) y jamás modifican la configuración global de TI de la empresa (<code>%APPDATA%\\Code\\User</code>).<br/>"
+                "• <b>Cero alteración de directivas corporativas:</b> Los parámetros se aplican únicamente a nivel de carpeta local (<code>.vscode/settings.json</code>) y jamás modifican la configuración global de TI de la empresa (<code>%APPDATA%\\Code\\User</code>).<br/>"
                 "• <b>Compatibilidad nativa con GitLab:</b> El estándar <code>.github/copilot-instructions.md</code> es una convención local exigida por el motor de Microsoft en disco que se sube limpiamente a GitLab como cualquier otra carpeta de proyecto.")
     
     sec_table = Table([[Paragraph(sec_html, box_text)]], colWidths=[523])
@@ -222,10 +221,7 @@ def build_pdf():
     story.append(sec_table)
 
     doc.build(story, canvasmaker=NumberedCanvas)
-    
-    import shutil
-    shutil.copyfile(pdf_path, pdf_copy_path)
-    print("✅ PDF generado con éxito con SOLO las 2 URLs oficiales:", pdf_path)
+    print("✅ PDF generado con éxito:", pdf_path)
 
 if __name__ == "__main__":
     build_pdf()
