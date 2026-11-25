@@ -53,7 +53,7 @@ class NumberedCanvas(canvas.Canvas):
         self.setStrokeColor(colors.HexColor("#CBD5E1"))
         self.setLineWidth(0.5)
         self.line(36, 32, A4[0] - 36, 32)
-        left_text = "Marco de Gobernanza • Guía de Productividad y Control de Copilot & GitLab para Consultoría Senior"
+        left_text = "Gobernanza Copilot & GitLab • Versión web en vivo: https://javiercursocorreo-gif.github.io/adaptacion-copilot"
         page_text = f"Página {self._pageNumber} de {page_count}"
         self.drawString(36, 22, left_text)
         self.drawRightString(A4[0] - 36, 22, page_text)
@@ -842,7 +842,7 @@ def compilar_pdf_reportlab():
 
     t_version_data = [
         [Paragraph("Versión", ver_header), Paragraph("Fecha", ver_header), Paragraph("Responsable", ver_header), Paragraph("Descripción Detallada del Cambio y Alcance de la Versión", ver_header)],
-        [Paragraph("<b>v1.0</b>", ver_cell_bold), Paragraph("25/11/2026", ver_cell), Paragraph("Marco Gobernanza IA", ver_cell), Paragraph("<b>Edición Inicial Oficial Entregada:</b> Adaptación íntegra para Consultoría Senior (+65). Aislamiento total en carpeta local (<code>.vscode/settings.json</code>) sin tocar TI en <code>AppData</code>; desmitificación de la ruta <code>.github</code> en GitLab; entorno de pruebas (Sandbox); script de marcha atrás en 5 seg (<code>desactivar_gobernanza.bat</code>); mitigación de las 4 D; y publicación de cuadros de mando interactivos en GitLab Pages.", ver_cell)]
+        [Paragraph("<b>v1.0</b>", ver_cell_bold), Paragraph("25/11/2026", ver_cell), Paragraph("Marco Gobernanza IA", ver_cell), Paragraph("<b>Edición Inicial Oficial Entregada:</b> Adaptación íntegra para Consultoría Senior (+65). Aislamiento total en carpeta local (<code>.vscode/settings.json</code>) sin tocar TI en <code>AppData</code>; desmitificación de la ruta <code>.github</code> en GitLab; entorno de pruebas (Sandbox); script de marcha atrás en 5 seg (<code>desactivar_gobernanza.bat</code>); mitigación de las 4 D; y publicación de cuadros de mando interactivos en GitLab Pages.<br/>🌐 <b>Versión viva online siempre actualizada:</b> <a href=\"https://javiercursocorreo-gif.github.io/adaptacion-copilot/ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB.html\" color=\"#1d4ed8\"><u><b>https://javiercursocorreo-gif.github.io/adaptacion-copilot ↗</b></u></a>", ver_cell)]
     ]
     t_version = Table(t_version_data, colWidths=[45, 60, 95, 323.27])
     t_version.setStyle(TableStyle([
@@ -1188,7 +1188,7 @@ def compilar_pdf_reportlab():
     p_kit_intro = [
         Paragraph("🟢 <b>MÉTODO OFICIAL Y UNIVERSAL PARA CONSULTORÍA CORPORATIVA</b>", ParagraphStyle('UKIT', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=8.5, leading=11.5, textColor=colors.HexColor('#16A34A'))),
         Paragraph("<b>4.1 La Plantilla Universal de Consultoría (WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip)</b>", h2_style),
-        Paragraph("Para empezar en cualquier ordenador corporativo (Windows o Mac) sin complicaciones técnicas, hemos empaquetado toda la arquitectura en el archivo comprimido <b><code>WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip</code></b>.<br/>Este paquete <b>ya incluye todo configurado por dentro</b>: la carpeta <code>.vscode/settings.json</code> precalibrada, las reglas de gobernanza en <code>.github/copilot-instructions.md</code>, el pipeline <code>.gitlab-ci.yml</code> para GitLab Pages, el script de marcha atrás <code>desactivar_gobernanza.bat</code> y la guía rápida <code>LEEME_PRIMERO.txt</code>.", feat_body),
+        Paragraph("Para empezar en cualquier ordenador corporativo (Windows o Mac) sin complicaciones técnicas, hemos empaquetado toda la arquitectura en el archivo comprimido: <a href=\"https://javiercursocorreo-gif.github.io/adaptacion-copilot/WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip\" color=\"#1d4ed8\"><u><b>WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip (Clic para Descargar) ↗</b></u></a>.<br/>Este paquete <b>ya incluye todo configurado por dentro</b>: la carpeta <code>.vscode/settings.json</code> precalibrada, las reglas de gobernanza en <code>.github/copilot-instructions.md</code>, el pipeline <code>.gitlab-ci.yml</code> para GitLab Pages, el script de marcha atrás <code>desactivar_gobernanza.bat</code> y la guía rápida <code>LEEME_PRIMERO.txt</code>.", feat_body),
         Spacer(1, 2),
         Paragraph("<b>4.2 Activación Paso a Paso en tu Portátil Corporativo Windows o Mac</b>", h2_style),
         Spacer(1, 1),
