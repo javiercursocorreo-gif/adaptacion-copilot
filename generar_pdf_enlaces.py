@@ -34,7 +34,7 @@ class NumberedCanvas(canvas.Canvas):
         self.line(36, 804, 559, 804)
         # Footer
         self.line(36, 36, 559, 36)
-        self.drawString(36, 24, "Entorno de Consultoría Estratégica · Repositorio Exclusivo GitHub")
+        self.drawString(36, 24, "Entorno de Consultoría Estratégica · Servidor Web GitHub Pages")
         self.drawRightString(559, 24, f"Página {self._pageNumber} de {page_count}")
         self.restoreState()
 
@@ -135,65 +135,59 @@ def build_pdf():
     story.append(Paragraph(intro_p, intro_style))
     story.append(Spacer(1, 6))
 
-    # Links Table (Dedicated repo adaptacion-copilot)
-    story.append(Paragraph("📋 Enlaces Oficiales de Descarga y Navegación", h2_style))
+    # Links Table via GitHub Pages (Clean web, zero code interfaces)
+    story.append(Paragraph("📋 Recursos Oficiales Directos (Vía Web y Descarga)", h2_style))
 
-    raw_base = "https://raw.githubusercontent.com/javiercursocorreo-gif/adaptacion-copilot/main"
-    gh_repo = "https://github.com/javiercursocorreo-gif/adaptacion-copilot"
+    pages_base = "https://javiercursocorreo-gif.github.io/adaptacion-copilot"
 
     table_data = [
         [
-            Paragraph("<b>Entregable</b>", cell_title),
-            Paragraph("<b>Enlace Rápido Directo</b>", cell_title),
-            Paragraph("<b>Descripción del Recurso</b>", cell_title)
+            Paragraph("<b>Recurso Ejecutivo</b>", cell_title),
+            Paragraph("<b>Acceso en 1 Clic</b>", cell_title),
+            Paragraph("<b>Descripción del Entregable</b>", cell_title)
         ],
         [
-            Paragraph("📄 <b>Guía Maestra (PDF)</b>", cell_title),
-            Paragraph(f'<a href="{raw_base}/ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB.pdf" color="#1d4ed8"><u><b>Descargar PDF (5 págs) ↗</b></u></a>', cell_link),
-            Paragraph("Documento completo de gobernanza: las 4 D, aislamiento de TI en AppData, parámetros de motor y ciclo de vida.", cell_desc)
+            Paragraph("📄 <b>Guía Maestra Oficial (PDF)</b>", cell_title),
+            Paragraph(f'<a href="{pages_base}/ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB.pdf" color="#1d4ed8"><u><b>Descargar PDF (5 págs) ↗</b></u></a>', cell_link),
+            Paragraph("Documento integral de gobernanza: las 4 D, aislamiento de TI en AppData, parámetros de motor y ciclo de vida.", cell_desc)
         ],
         [
             Paragraph("📦 <b>Kit de Inicio en 1 Clic (ZIP)</b>", cell_title),
-            Paragraph(f'<a href="{raw_base}/WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip" color="#1d4ed8"><u><b>Descargar Kit ZIP ↗</b></u></a>', cell_link),
+            Paragraph(f'<a href="{pages_base}/WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip" color="#1d4ed8"><u><b>Descargar Kit ZIP ↗</b></u></a>', cell_link),
             Paragraph("Plantilla universal con <code>.vscode</code>, <code>copilot-instructions</code>, pipeline de GitLab y script <code>desactivar_gobernanza.bat</code>.", cell_desc)
         ],
         [
             Paragraph("🌐 <b>Visor Web Interactivo (HTML)</b>", cell_title),
-            Paragraph(f'<a href="{gh_repo}/blob/main/ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB.html" color="#1d4ed8"><u><b>Abrir Visor Web (HTML) ↗</b></u></a>', cell_link),
-            Paragraph("Versión web completa y responsive para lectura cómoda desde cualquier navegador, iPad o PC sin descargas.", cell_desc)
-        ],
-        [
-            Paragraph("📂 <b>Repositorio en GitHub</b>", cell_title),
-            Paragraph(f'<a href="{gh_repo}" color="#1d4ed8"><u><b>Ver Repositorio Exclusivo ↗</b></u></a>', cell_link),
-            Paragraph("Repositorio oficial independiente con los archivos fuente, histórico de versiones (v1.0) y plantillas originales.", cell_desc)
+            Paragraph(f'<a href="{pages_base}/ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB.html" color="#1d4ed8"><u><b>Abrir Visor Web (HTML) ↗</b></u></a>', cell_link),
+            Paragraph("Versión web completa maquetada y responsive para lectura interactiva desde navegador, iPad o PC sin descargas.", cell_desc)
         ]
     ]
 
-    t = Table(table_data, colWidths=[140, 160, 223])
+    t = Table(table_data, colWidths=[150, 160, 213])
     t.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#f1f5f9")),
         ('ALIGN', (0,0), (-1,-1), 'LEFT'),
         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
-        ('TOPPADDING', (0,0), (-1,-1), 7),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 7),
+        ('TOPPADDING', (0,0), (-1,-1), 8),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 8),
         ('LEFTPADDING', (0,0), (-1,-1), 8),
         ('RIGHTPADDING', (0,0), (-1,-1), 8),
         ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#cbd5e1")),
         ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor("#f8fafc")]),
     ]))
     story.append(t)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 12))
 
     # Fast Start Box
-    story.append(Paragraph("⚡ Instrucciones Rápidas de Puesta en Marcha (3 Pasos)", h2_style))
+    story.append(Paragraph("⚡ Puesta en Marcha en 3 Pasos (Sin Complicaciones)", h2_style))
     steps_data = [
         [
             Paragraph("<b>Paso 1: Descarga y Extracción</b>", cell_title),
-            Paragraph("Descarga el <a href='" + raw_base + "/WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip' color='#1d4ed8'><u>Kit ZIP</u></a> y descomprímelo en una carpeta aislada de prueba en tu equipo (ej. <code>C:\\Piloto-Consultoria\\</code>).", cell_desc)
+            Paragraph("Descarga el <a href='" + pages_base + "/WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip' color='#1d4ed8'><u>Kit ZIP</u></a> y descomprímelo en una carpeta de prueba en tu equipo (ej. <code>C:\\Piloto-Consultoria\\</code>).", cell_desc)
         ],
         [
             Paragraph("<b>Paso 2: Apertura en VS Code</b>", cell_title),
-            Paragraph("Abre VS Code y selecciona <i>Archivo → Abrir carpeta...</i> apuntando a la carpeta descomprimida. La gobernanza de Copilot se activará de forma inmediata exclusivamente para ese espacio.", cell_desc)
+            Paragraph("Abre VS Code y selecciona <i>Archivo → Abrir carpeta...</i> apuntando a la carpeta descomprimida. La gobernanza de Copilot se activa de inmediato solo para ese proyecto.", cell_desc)
         ],
         [
             Paragraph("<b>Paso 3: Marcha Atrás (Rollback)</b>", cell_title),
@@ -204,27 +198,27 @@ def build_pdf():
     t_steps.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,-1), colors.HexColor("#f8fafc")),
         ('VALIGN', (0,0), (-1,-1), 'TOP'),
-        ('TOPPADDING', (0,0), (-1,-1), 6),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 6),
+        ('TOPPADDING', (0,0), (-1,-1), 7),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 7),
         ('LEFTPADDING', (0,0), (-1,-1), 8),
         ('RIGHTPADDING', (0,0), (-1,-1), 8),
         ('BOX', (0,0), (-1,-1), 0.5, colors.HexColor("#cbd5e1")),
         ('INNERGRID', (0,0), (-1,-1), 0.5, colors.HexColor("#e2e8f0")),
     ]))
     story.append(t_steps)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 12))
 
     # Security Guarantee Box
     sec_html = ("<b>🛡️ Garantía de Seguridad y Cumplimiento de TI Corporativo:</b><br/>"
-                "• <b>Cero alteración de políticas:</b> Los parámetros se aplican únicamente a nivel de proyecto (<code>.vscode/settings.json</code>) y jamás modifican la configuración global de TI de la empresa (<code>%APPDATA%\\Code\\User</code>).<br/>"
-                "• <b>Compatibilidad total con GitLab:</b> El estándar <code>.github/copilot-instructions.md</code> es una convención local de disco exigida por Microsoft que se aloja de forma nativa en repositorios de GitLab sin interferencias.")
+                "• <b>Cero alteración de directivas corporativas:</b> Los parámetros se aplican exclusivamente a nivel de carpeta local (<code>.vscode/settings.json</code>) y jamás modifican la configuración global de TI de la empresa (<code>%APPDATA%\\Code\\User</code>).<br/>"
+                "• <b>Compatibilidad nativa con GitLab:</b> El estándar <code>.github/copilot-instructions.md</code> es una convención local exigida por el motor de Microsoft en disco que se sube limpiamente a GitLab como cualquier otra carpeta de proyecto.")
     
     sec_table = Table([[Paragraph(sec_html, box_text)]], colWidths=[523])
     sec_table.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (0,0), colors.HexColor("#f0fdf4")),
         ('BOX', (0,0), (0,0), 1, colors.HexColor("#86efac")),
-        ('TOPPADDING', (0,0), (0,0), 8),
-        ('BOTTOMPADDING', (0,0), (0,0), 8),
+        ('TOPPADDING', (0,0), (0,0), 9),
+        ('BOTTOMPADDING', (0,0), (0,0), 9),
         ('LEFTPADDING', (0,0), (0,0), 10),
         ('RIGHTPADDING', (0,0), (0,0), 10),
     ]))
