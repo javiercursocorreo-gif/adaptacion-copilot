@@ -1,6 +1,6 @@
 # HISTORIAL MAESTRO DE CONTROL DE VERSIONES: GUÍA COPILOT & GITLAB
 
-Este documento registra de forma cronológica, exhaustiva y permanente cada versión, actualización, párrafo modificado o mejora incorporada en la **Guía de Arquitectura, Parametrización y Gobernanza en GitHub Copilot & GitLab** (`ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB`), asegurando que cualquier evolución de nuestra arquitectura maestra de Antigravity quede fielmente replicada y documentada para el consultor.
+Este documento registra de forma cronológica, exhaustiva y permanente cada versión, actualización, párrafo modificado o mejora incorporada en la **Guía de Arquitectura, Parametrización y Gobernanza en Copilot & GitLab** (`ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB`), asegurando que cualquier evolución de nuestra arquitectura maestra de Antigravity quede fielmente replicada y documentada para el consultor.
 
 ---
 

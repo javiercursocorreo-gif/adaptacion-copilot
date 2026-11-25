@@ -126,13 +126,13 @@ def build_pdf():
     story = []
 
     # Title & Subtitle
-    story.append(Paragraph("Marco de Gobernanza y Arquitectura con GitHub Copilot", title_style))
+    story.append(Paragraph("Marco de Gobernanza y Arquitectura con Copilot", title_style))
     story.append(Paragraph("<b>Entregables Oficiales y Descargas Directas</b> · Versión v1.0", subtitle_style))
     story.append(Spacer(1, 4))
 
     # Intro
     intro_p = ("Esta ficha centraliza los <b>dos únicos recursos oficiales</b> preparados para consultoría estratégica y de negocio. "
-               "Permite implementar gobernanza estricta en <b>GitHub Copilot</b> dentro de <b>VS Code</b> sobre repositorios "
+               "Permite implementar gobernanza estricta en <b>Copilot</b> dentro de <b>VS Code</b> sobre repositorios "
                "corporativos en <b>GitLab</b>, garantizando aislamiento total del puesto de trabajo y reversión en 5 segundos.")
     story.append(Paragraph(intro_p, intro_style))
     story.append(Spacer(1, 6))

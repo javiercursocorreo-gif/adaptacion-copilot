@@ -354,8 +354,8 @@ def generar_html():
 <body>
 <div class="container">
     <span class="badge-corp">Guía de Gobernanza para Consultoría Corporativa</span>
-    <h1>Guía de Arquitectura, Parametrización y Gobernanza en GitHub Copilot & GitLab</h1>
-    <div class="subtitle">Manual Maestro de Productividad y Control de IA para Consultores y Profesionales Senior (+65)<br/>Cómo dirigir a GitHub Copilot sobre repositorios corporativos en GitLab, generar entregables de alto impacto, blindar la confidencialidad y operar sin alterar el entorno habitual del ordenador de la empresa.</div>
+    <h1>Guía de Arquitectura, Parametrización y Gobernanza en Copilot & GitLab</h1>
+    <div class="subtitle">Manual Maestro de Productividad y Control de IA para Consultores y Profesionales Senior (+65)<br/>Cómo dirigir a Copilot sobre repositorios corporativos en GitLab, generar entregables de alto impacto, blindar la confidencialidad y operar sin alterar el entorno habitual del ordenador de la empresa.</div>
 
     <!-- TABLA DE CONTROL DE VERSIONES -->
     <table class="version-table">
@@ -831,8 +831,8 @@ def compilar_pdf_reportlab():
     story = []
 
     # PAGE 1: PORTADA, CONTROL DE VERSIONES Y CABECERA
-    story.append(Paragraph("Guía de Arquitectura, Parametrización y Gobernanza en GitHub Copilot & GitLab", title_style))
-    story.append(Paragraph("<b>Manual Maestro de Productividad y Control de IA para Consultores y Profesionales Senior (+65)</b><br/>Cómo dirigir a GitHub Copilot sobre repositorios corporativos en GitLab, generar entregables de alto impacto, blindar la confidencialidad y operar sin alterar el entorno habitual del ordenador de la empresa.", subtitle_style))
+    story.append(Paragraph("Guía de Arquitectura, Parametrización y Gobernanza en Copilot & GitLab", title_style))
+    story.append(Paragraph("<b>Manual Maestro de Productividad y Control de IA para Consultores y Profesionales Senior (+65)</b><br/>Cómo dirigir a Copilot sobre repositorios corporativos en GitLab, generar entregables de alto impacto, blindar la confidencialidad y operar sin alterar el entorno habitual del ordenador de la empresa.", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.2, color=c_blue, spaceBefore=0, spaceAfter=4))
 
     # TABLA DE CONTROL DE VERSIONES (TOP OF PAGE 1)
