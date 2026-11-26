@@ -7,7 +7,7 @@ Este documento registra de forma cronológica, exhaustiva y permanente cada vers
 ## 📋 REGLA DE ORO DE SINCRONIZACIÓN CONTINUA
 1. **Replicación Obligatoria:** Cada vez que se introduzca un nuevo estándar, protocolo, sección o párrafo en `ARQUITECTURA_Y_SOLUCIONES_ANTIGRAVITY`, el asistente debe replicarlo adaptado al lenguaje de consultoría en `ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB` (PDF, HTML y DOCX).
 2. **Incremento de Versión:** Cada cambio genera una nueva versión en la tabla oficial de control de versiones del documento (`v1.1`, `v1.2`, `v1.3`... o `v2.0` si es un cambio mayor).
-3. **Detalle a Nivel de Párrafo:** En el registro de cambios se debe detallar exactamente qué sección se ha modificado, si es un párrafo nuevo, una aclaración conceptual o una actualización de herramientas.
+3. **Detalle a Nivel de Párrafo y Brecha Copilot/Antigravity:** En el registro de cambios se debe detallar exactamente qué sección se ha modificado y mantener siempre actualizado el último apartado (**`4.4 Capacidades Exclusivas de Antigravity no Disponibles en Copilot`**) cada vez que se incorpore en Antigravity una capacidad que Copilot no pueda replicar.
 
 ---
 

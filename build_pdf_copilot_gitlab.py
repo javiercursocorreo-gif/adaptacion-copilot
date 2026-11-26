@@ -426,6 +426,7 @@ def generar_html():
                     <li><a href="#f4-1">4.1 La Plantilla Universal de Consultoría (WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip)</a></li>
                     <li><a href="#f4-2">4.2 Activación Paso a Paso en tu Portátil Corporativo Windows o Mac</a></li>
                     <li><a href="#f4-3">4.3 Matriz Comparativa: La Consultoría Tradicional con IA vs. Metodología Gobernada</a></li>
+                    <li><a href="#f4-4">4.4 Capacidades Exclusivas de Antigravity no Disponibles en Copilot</a></li>
                 </ul>
             </li>
         </ul>
@@ -653,7 +654,8 @@ def generar_html():
         <div class="kit-title">📦 CONTENIDO DEL KIT UNIVERSAL:</div>
         <ul>
             <li><code>.vscode/settings.json</code>: Parámetros de Cero-Submits y confidencialidad precalibrados para consultoría.</li>
-            <li><code>.github/copilot-instructions.md</code>: Las directivas maestras de estilo, rigor analítico y cero duplicación.</li>
+            <li><code>.github/copilot-instructions.md</code>: Las directivas maestras de estilo, rigor analítico, regla «Solo Borradores» y cero duplicación.</li>
+            <li><code>.github/prompts/</code>: <strong>3 Skills reutilizables</strong> listos para usar (<code>/resumen-ejecutivo</code>, <code>/auditar-excel-datos</code> y <code>/dashboard-html</code>).</li>
             <li><code>.gitlab-ci.yml</code>: Automatización para publicar dashboards en GitLab Pages.</li>
             <li><code>desactivar_gobernanza.bat</code>: <strong>El botón de marcha atrás en 1 clic para Windows</strong> (restaura el estado original instantáneamente).</li>
             <li><code>LEEME_PRIMERO.txt</code>: Guía rápida ejecutiva en 3 pasos explicada sin tecnicismos.</li>
@@ -706,6 +708,15 @@ def generar_html():
             </tr>
         </tbody>
     </table>
+
+    <h2 id="f4-4">4.4 Capacidades Exclusivas de Antigravity no Disponibles en Copilot</h2>
+    <p>Para ofrecer total transparencia sobre el alcance real de cada plataforma, estas son las funcionalidades avanzadas disponibles hoy en <strong>Google Antigravity</strong> que <strong>no pueden replicarse igual en Copilot (VS Code)</strong>:</p>
+    <ul>
+        <li><strong>Enjambres Multi-Agente Paralelos (<code>/swarm</code>):</strong> Antigravity coordina equipos de especialistas trabajando en paralelo sobre copias aisladas y un tablón común; Copilot opera mediante un <strong>único agente asistente</strong> sobre la carpeta abierta.</li>
+        <li><strong>Navegador Autónomo y Comentarios Visuales (<em>Pin &amp; Comment</em>):</strong> Copilot no abre un navegador propio para probar aplicaciones en vivo ni permite señalar elementos visuales en pantalla para corregirlos.</li>
+        <li><strong>Agentes Remotos en la Nube y Modo Voz en Paralelo:</strong> Copilot ejecuta localmente en tu ordenador (no dispone de agentes en la nube trabajando con el portátil cerrado ni dictado paralelo mientras edita).</li>
+        <li><strong>Integración Nativa con Google Workspace y Modo «Tarea»:</strong> La conexión directa con Gmail/Docs/Sheets/Calendar y el volcado automático de PDFs a Calendar son exclusivos del ecosistema Google.</li>
+    </ul>
 
     <footer>
         Guía de Gobernanza y Productividad con Copilot & GitLab para Consultores Senior • Marco Metodológico Corporativo
@@ -917,7 +928,8 @@ def compilar_pdf_reportlab():
         Paragraph("<b>FASE 4: PUESTA EN MARCHA EN 1 CLIC (PLANTILLA UNIVERSAL CON ROLLBACK)</b>", toc_phase),
         Paragraph("4.1 La Plantilla Universal de Consultoría (WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip)", toc_sub),
         Paragraph("4.2 Activación Paso a Paso en tu Portátil Corporativo Windows o Mac", toc_sub),
-        Paragraph("4.3 Matriz Comparativa: La Consultoría Tradicional con IA vs. Metodología Gobernada", toc_sub)
+        Paragraph("4.3 Matriz Comparativa: La Consultoría Tradicional con IA vs. Metodología Gobernada", toc_sub),
+        Paragraph("4.4 Capacidades Exclusivas de Antigravity no Disponibles en Copilot", toc_sub)
     ]
     t_toc = Table([[p_toc]], colWidths=[PAGE_WIDTH])
     t_toc.setStyle(TableStyle([
@@ -1201,7 +1213,7 @@ def compilar_pdf_reportlab():
     p_kit_intro = [
         Paragraph("🟢 <b>MÉTODO OFICIAL Y UNIVERSAL PARA CONSULTORÍA CORPORATIVA</b>", ParagraphStyle('UKIT', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=8.5, leading=11.5, textColor=colors.HexColor('#16A34A'))),
         Paragraph("<b>4.1 La Plantilla Universal de Consultoría (WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip)</b>", h2_style),
-        Paragraph("Para empezar en cualquier ordenador corporativo (Windows o Mac) sin complicaciones técnicas, hemos empaquetado toda la arquitectura en el archivo comprimido: <a href=\"https://javiercursocorreo-gif.github.io/adaptacion-copilot/WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip\" color=\"#1d4ed8\"><u><b>WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip (Clic para Descargar) ↗</b></u></a>.<br/>Este paquete <b>ya incluye todo configurado por dentro</b>: la carpeta <code>.vscode/settings.json</code> precalibrada, las reglas de gobernanza en <code>.github/copilot-instructions.md</code>, el pipeline <code>.gitlab-ci.yml</code> para GitLab Pages, el script de marcha atrás <code>desactivar_gobernanza.bat</code> y la guía rápida <code>LEEME_PRIMERO.txt</code>.", feat_body),
+        Paragraph("Para empezar en cualquier ordenador corporativo (Windows o Mac) sin complicaciones técnicas, hemos empaquetado toda la arquitectura en el archivo comprimido: <a href=\"https://javiercursocorreo-gif.github.io/adaptacion-copilot/WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip\" color=\"#1d4ed8\"><u><b>WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip (Clic para Descargar) ↗</b></u></a>.<br/>Este paquete <b>ya incluye todo configurado por dentro</b>: <code>.vscode/settings.json</code> precalibrado, las reglas de gobernanza en <code>.github/copilot-instructions.md</code>, la carpeta <code>.github/prompts/</code> con <b>3 Skills de consultoría</b> (<code>/resumen-ejecutivo</code>, <code>/auditar-excel-datos</code>, <code>/dashboard-html</code>), el pipeline <code>.gitlab-ci.yml</code> para GitLab Pages, <code>desactivar_gobernanza.bat</code> y <code>LEEME_PRIMERO.txt</code>.", feat_body),
         Spacer(1, 2),
         Paragraph("<b>4.2 Activación Paso a Paso en tu Portátil Corporativo Windows o Mac</b>", h2_style),
         Spacer(1, 1),
@@ -1248,6 +1260,11 @@ def compilar_pdf_reportlab():
         ('RIGHTPADDING', (0,0), (-1,-1), 4),
     ]))
     story.append(t_cat)
+    story.append(Spacer(1, 5))
+
+    # 4.4 CAPACIDADES EXCLUSIVAS DE ANTIGRAVITY NO DISPONIBLES EN COPILOT
+    story.append(Paragraph("4.4 Capacidades Exclusivas de Antigravity no Disponibles en Copilot", h1_style))
+    story.append(Paragraph("Con total transparencia sobre el alcance de cada entorno, estas capacidades actuales de <b>Antigravity</b> no están disponibles en <b>Copilot (VS Code)</b>: <b>1) Enjambres paralelos (<code>/swarm</code>)</b> en copias aisladas y tablón compartido (Copilot opera como agente único); <b>2) Navegador autónomo con comentarios visuales (<i>Pin &amp; Comment</i>)</b> para probar y señalar cambios sobre pantalla; <b>3) Agentes Remotos en la nube</b> con el portátil cerrado y <b>Modo Voz en paralelo</b>; y <b>4) Integración nativa con Google Workspace</b> y selector <i>Tarea</i> (PDF → Calendar).", body_style))
 
     doc.build(story, canvasmaker=NumberedCanvas)
     print(f"✅ PDF generado para consultoría: {PDF_FILE}", flush=True)
@@ -1267,6 +1284,7 @@ def empaquetar_plantilla_zip():
     
     os.makedirs(os.path.join(temp_dir, ".vscode"), exist_ok=True)
     os.makedirs(os.path.join(temp_dir, ".github"), exist_ok=True)
+    os.makedirs(os.path.join(temp_dir, ".github", "prompts"), exist_ok=True)
     os.makedirs(os.path.join(temp_dir, ".gitlab"), exist_ok=True)
     os.makedirs(os.path.join(temp_dir, "informes"), exist_ok=True)
     os.makedirs(os.path.join(temp_dir, "fuentes_datos"), exist_ok=True)
@@ -1294,7 +1312,7 @@ def empaquetar_plantilla_zip():
         f.write(settings_content)
 
     # 2. copilot-instructions.md
-    instructions_content = """# REGLAS DE GOBERNANZA PARA CONSULTORÍA SENIOR (GITHUB COPILOT & GITLAB)
+    instructions_content = """# REGLAS DE GOBERNANZA PARA CONSULTORÍA SENIOR (COPILOT & GITLAB)
 
 ## 1. PROTOCOLO DE CERO-SUBMITS ABSOLUTO
 - Aplica las ediciones directamente en los archivos de informes sin solicitar confirmaciones parciales ('Accept', 'Submit').
@@ -1303,21 +1321,88 @@ def empaquetar_plantilla_zip():
 ## 2. PATRÓN DE TRABAJO EN SILENCIO Y TONO EJECUTIVO
 - Cero Charlas ni Explicaciones Innecesarias: Prohibido redactar preámbulos vacíos o comentarios de relleno.
 - Tono Formal y Ejecutivo: Prosa sobria, precisa y adaptada a comités de dirección y clientes corporativos.
+- Activación Natural: No exijas al consultor memorizar ni escribir comandos '/'; interpreta sus peticiones en lenguaje natural.
 
-## 3. MITIGACIÓN DE RIESGOS EN CONSULTORÍA (LAS 4 D)
+## 3. MITIGACIÓN DE RIESGOS EN CONSULTORÍA (LAS 4 D) Y PROTOCOLO ELEPHANT-GOLDFISH
 - Anti-Duplicación: Reutiliza la terminología y marcos metodológicos oficiales del repositorio.
 - Anti-Drift: Respeta estrictamente el alcance pactado en los pliegos del proyecto.
 - Anti-Deluge: Prioriza tablas comparativas, matrices DAFO y cuadros de mando interactivos sobre memorias farragosas.
 - Anti-Deception: Cero datos inventados. Toda cifra o porcentaje debe provenir de las fuentes aportadas por el consultor.
+- Auto-Auditoría Previa (Elephant-Goldfish): Antes de dar por terminado un informe, análisis en Excel/CSV o dashboard HTML, verifica enlaces, fórmulas y coherencia de cifras.
 
-## 4. ENTREGABLES AUTÓNOMOS DE ALTO IMPACTO
+## 4. ENTREGABLES AUTÓNOMOS DE ALTO IMPACTO Y REGLA «SOLO BORRADORES»
 - Prohibido entregar fragmentos sueltos de código o instrucciones manuales complejas.
-- Entrega informes completos en Markdown/Word o cuadros de mando interactivos en HTML único listos para proyectar en reuniones.
+- Entrega informes completos en Markdown/Word o cuadros de mando interactivos en HTML único listos para proyectar en reuniones y publicar en GitLab Pages.
+- Regla «Solo Borradores»: Prepara siempre borradores locales para revisión ejecutiva humana antes de enviar o publicar nada hacia clientes.
 """
     with open(os.path.join(temp_dir, ".github", "copilot-instructions.md"), "w", encoding="utf-8") as f:
         f.write(instructions_content)
     with open(os.path.join(temp_dir, ".gitlab", "copilot-instructions.md"), "w", encoding="utf-8") as f:
         f.write(instructions_content)
+
+    # 2b. Skills Reutilizables en .github/prompts/ (invocables con '/')
+    prompt_resumen = """---
+mode: agent
+description: Convierte actas de reuniones o informes largos en un resumen ejecutivo estructurado para dirección.
+---
+# ROL Y OBJETIVO
+Eres un Consultor Senior de Estrategia. Transforma el documento indicado en un resumen ejecutivo listo para comité de dirección.
+
+# RESTRICCIONES NEGATIVAS (NEVER DO)
+- Nunca inventes cifras, fechas ni nombres de responsables que no aparezcan literalmente en las fuentes.
+- Cero charla introductoria ni despedidas. Entrega directamente el resumen.
+
+# ESTRUCTURA DE ENTRADA
+Utiliza el archivo adjuntado con `#file` o la selección actual del consultor.
+
+# FORMATO DE ENTREGA
+1. **Síntesis en 3 Puntos Clave** (máximo 2 líneas por punto).
+2. **Tabla de Decisiones, Riesgos y Próximos Pasos** (Columnas: Acción | Responsable | Plazo | Riesgo).
+"""
+    with open(os.path.join(temp_dir, ".github", "prompts", "resumen-ejecutivo.prompt.md"), "w", encoding="utf-8") as f:
+        f.write(prompt_resumen)
+
+    prompt_excel = """---
+mode: agent
+description: Audita hojas Excel/CSV y tablas financieras aplicando el protocolo Elephant-Goldfish para detectar incoherencias.
+---
+# ROL Y OBJETIVO
+Actúa como Auditor Financiero y de Datos (modo Goldfish con mente limpia). Revisa el archivo Excel/CSV o tabla indicada para garantizar fiabilidad del 100% antes de una reunión.
+
+# RESTRICCIONES NEGATIVAS (NEVER DO)
+- Prohibido redondear o rellenar celdas vacías inventando estimaciones.
+- No entregues scripts complejos; señala exactamente qué fila/columna tiene incoherencias y propón el dato o corrección limpia.
+
+# ESTRUCTURA DE ENTRADA
+Archivo CSV/Excel o tabla de datos referenciada con `#file`.
+
+# FORMATO DE ENTREGA
+1. **Veredicto Rápido** (Apto / Requiere Revisión).
+2. **Tabla de Incidencias Detectadas** (Ubicación | Problema | Impacto | Corrección Sugerida).
+"""
+    with open(os.path.join(temp_dir, ".github", "prompts", "auditar-excel-datos.prompt.md"), "w", encoding="utf-8") as f:
+        f.write(prompt_excel)
+
+    prompt_dashboard = """---
+mode: agent
+description: Genera un cuadro de mando interactivo en HTML único (Generative UI) listo para proyectar y publicar en GitLab Pages.
+---
+# ROL Y OBJETIVO
+Diseña un Cuadro de Mando Ejecutivo interactivo en un único archivo HTML autónomo dentro de la carpeta `informes/`, listo para abrir en navegador o publicar en GitLab Pages.
+
+# RESTRICCIONES NEGATIVAS (NEVER DO)
+- Nunca entregues trozos de código sueltos en el chat; guarda directamente el archivo `.html` completo y funcional.
+- Prohibido inventar métricas o KPIs fuera de las fuentes del proyecto.
+- Antes de darlo por bueno, ejecuta auto-auditoría de enlaces, filtros y coherencia visual.
+
+# ESTRUCTURA DE ENTRADA
+Documentos de datos o informes referenciados con `#file` o `@workspace`.
+
+# FORMATO DE ENTREGA
+Archivo HTML único autocontenido (CSS y JS integrados, sin dependencias externas frágiles) con filtros interactivos, semáforo de riesgos y diseño corporativo sobrio.
+"""
+    with open(os.path.join(temp_dir, ".github", "prompts", "dashboard-html.prompt.md"), "w", encoding="utf-8") as f:
+        f.write(prompt_dashboard)
 
     # 3. .gitlab-ci.yml
     gitlab_ci_content = """# Publicación Automática de Dashboards e Informes en GitLab Pages
