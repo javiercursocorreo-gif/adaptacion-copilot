@@ -583,6 +583,7 @@ def generar_html():
         <li><strong>Claude 3.5 Sonnet (Recomendado para Redacción Ejecutiva e Informes):</strong> Es el modelo con mayor rigor conceptual, mejor prosa empresarial y menor tendencia a inventar datos. Ideal para informes estratégicos, diagnósticos organizativos y propuestas de consultoría.</li>
         <li><strong>GPT-4o (Recomendado para Tratamiento de Datos y Hojas de Cálculo):</strong> Gran velocidad para procesar tablas complejas, transformar listados de requerimientos o extraer resúmenes ejecutivos a partir de transcripciones de entrevistas.</li>
     </ul>
+    <p><strong>Alcance realista en Copilot:</strong> A diferencia de plataformas de enjambre masivo (<code>/swarm</code>), Copilot opera en VS Code mediante un <strong>único agente asistente sobre tu carpeta</strong>, apoyado por atajos <code>/</code> y modificadores <code>#file</code>, lo que lo hace directo, predecible y seguro para el consultor.</p>
 
     <h2 id="f2-2">2.2 Modificadores de Enfoque: Cómo dar Contexto a la IA sin Copiar y Pegar</h2>
     <p>El consultor senior no debe perder el tiempo copiando y pegando fragmentos de documentos en el chat. En su lugar, utiliza los comandos directos de VS Code:</p>
@@ -631,7 +632,7 @@ def generar_html():
         <li>Matrices de riesgo clicables (rojo / amarillo / verde) con desplegables explicativos.</li>
         <li>Gráficos visuales de avance de hitos y cronogramas.</li>
     </ul>
-    <p>Este archivo HTML se puede enviar por correo o abrir directamente en una reunión con un proyector o tablet, causando un impacto profesional extraordinario.</p>
+    <p>Este archivo HTML se puede enviar por correo o abrir directamente en una reunión con un proyector o tablet, causando un impacto profesional extraordinario. Antes de dar por cerrado un dashboard HTML o informe, Copilot ejecuta una <strong>auto-auditoría previa</strong> (verificando enlaces, estructura y coherencia de datos) para evitar fallos en vivo.</p>
 
     <h2 id="f3-7">3.7 Publicación Automática en GitLab Pages e Intranet Corporativa sin Servidores</h2>
     <p>Al sincronizar tu carpeta con GitLab, el pipeline <code>.gitlab-ci.yml</code> toma automáticamente tus dashboards e informes HTML y los publica en una dirección web privada de tu empresa (<strong>GitLab Pages</strong>). Esto permite que tus directores o tu equipo puedan consultar el estado del proyecto en tiempo real desde cualquier dispositivo simplemente abriendo un enlace web seguro, sin necesidad de configurar servidores ni pagar licencias extra.</p>
@@ -1090,7 +1091,7 @@ def compilar_pdf_reportlab():
     # FASE 2: MOTOR DE COPILOT Y DIRECTIVAS DE TRABAJO
     story.append(Paragraph("FASE 2: EL MOTOR DE COPILOT Y DIRECTIVAS DE TRABAJO", phase_style))
     story.append(Paragraph("2.1 Selección de Modelos para Consultoría (Claude 3.5 Sonnet para Informes vs. GPT-4o para Datos)", h1_style))
-    story.append(Paragraph("En la barra superior de Copilot Chat, el consultor puede seleccionar el motor según el tipo de entregable: <b>Claude 3.5 Sonnet (NUESTRO ESTÁNDAR PARA REDACCIÓN EJECUTIVA)</b> destaca por su máxima precisión conceptual, excelente tono formal y nula propensión a alucinar datos en informes estratégicos y diagnósticos; mientras que <b>GPT-4o</b> sobresale por su velocidad para transformar tablas, procesar listados y extraer resúmenes de actas.", body_style))
+    story.append(Paragraph("En la barra superior de Copilot Chat, el consultor puede seleccionar el motor según el tipo de entregable: <b>Claude 3.5 Sonnet (NUESTRO ESTÁNDAR PARA REDACCIÓN EJECUTIVA)</b> destaca por su máxima precisión conceptual, excelente tono formal y nula propensión a alucinar datos en informes estratégicos y diagnósticos; mientras que <b>GPT-4o</b> sobresale por su velocidad para transformar tablas, procesar listados y extraer resúmenes de actas. A diferencia de entornos con enjambres paralelos (<code>/swarm</code>), Copilot opera mediante un <b>único agente asistente</b> sobre la carpeta abierta, ofreciendo control directo y predecible.", body_style))
     story.append(Spacer(1, 2.5))
 
     story.append(Paragraph("2.2 Modificadores de Enfoque: Cómo dar Contexto a la IA sin Copiar y Pegar", h1_style))
@@ -1185,7 +1186,7 @@ def compilar_pdf_reportlab():
     story.append(Paragraph("Un consultor no debe manipular código ni parches manuales ('copia esto en la línea 45'). Todo lo entregado por la IA debe ser <b>un producto terminado y autónomo</b>: documentos completos en Markdown/Word listos para exportar a PDF, o micro-aplicaciones HTML autónomas que abren con un doble clic en cualquier ordenador o tablet sin servidores intermedios.", body_style))
 
     story.append(Paragraph("3.6 Dashboards Ejecutivos Interactivos en HTML (Generative UI para Clientes y Directores)", h1_style))
-    story.append(Paragraph("En lugar de presentar memorias áridas de 80 páginas que nadie lee, la IA compila <b>Cuadros de Mando Interactivos (HTML)</b> en un único archivo con diseño corporativo elegante: filtros por departamento, matrices de riesgo clicables (rojo / amarillo / verde) y cronogramas visuales que causan un impacto profesional extraordinario en comités de dirección.", body_style))
+    story.append(Paragraph("En lugar de presentar memorias áridas de 80 páginas que nadie lee, la IA compila <b>Cuadros de Mando Interactivos (HTML)</b> en un único archivo con diseño corporativo elegante: filtros por departamento, matrices de riesgo clicables (rojo / amarillo / verde) y cronogramas visuales que causan un impacto profesional extraordinario en comités de dirección, realizando siempre una <b>auto-auditoría previa</b> de enlaces y coherencia antes de entregar.", body_style))
 
     story.append(Paragraph("3.7 Publicación Automática en GitLab Pages e Intranet Corporativa sin Servidores", h1_style))
     story.append(Paragraph("Al sincronizar tu carpeta con GitLab, el pipeline <code>.gitlab-ci.yml</code> toma automáticamente tus dashboards e informes HTML y los publica en una dirección web privada de tu empresa (<b>GitLab Pages</b>), accesible desde cualquier dispositivo para tus directivos y equipo sin necesidad de configurar servidores web manuales ni pagar licencias extra.", body_style))
