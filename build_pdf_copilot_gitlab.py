@@ -372,7 +372,7 @@ def generar_html():
                 <td><span class="version-tag">v1.0</span></td>
                 <td>25/11/2026</td>
                 <td>Marco Gobernanza IA</td>
-                <td><strong>Edición Inicial Oficial Entregada:</strong> Adaptación íntegra para Consultoría Senior (+65). Aislamiento total en carpeta local (<code>.vscode/settings.json</code>) sin tocar TI en <code>AppData</code>; desmitificación de la ruta <code>.github</code> en GitLab; entorno de pruebas (Sandbox); script de marcha atrás en 5 seg (<code>desactivar_gobernanza.bat</code>); mitigación de las 4 D; y publicación de cuadros de mando interactivos en GitLab Pages.</td>
+                <td><strong>Edición Inicial Oficial Entregada:</strong> Adaptación íntegra para Consultoría Senior (+65). Aislamiento total en carpeta local (<code>.vscode/settings.json</code>) sin tocar TI en <code>AppData</code>; desmitificación de la ruta <code>.github</code> en GitLab; entorno de pruebas (Sandbox); script de marcha atrás en 5 seg (<code>desactivar_gobernanza.bat</code>); mitigación de las 4 D; publicación en GitLab Pages; y arquitectura modular de Skills reutilizables con «/» (<code>.github/prompts/</code>).</td>
             </tr>
         </tbody>
     </table>
@@ -418,6 +418,7 @@ def generar_html():
                     <li><a href="#f3-5">3.5 Cero Trozos de Código Sueltos: Entrega de Soluciones Completas y Autónomas</a></li>
                     <li><a href="#f3-6">3.6 Dashboards Ejecutivos Interactivos en HTML (Generative UI para Clientes y Directores)</a></li>
                     <li><a href="#f3-7">3.7 Publicación Automática en GitLab Pages e Intranet Corporativa sin Servidores</a></li>
+                    <li><a href="#f3-8">3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría</a></li>
                 </ul>
             </li>
             <li><strong><a href="#fase4">FASE 4: PUESTA EN MARCHA EN 1 CLIC (PLANTILLA UNIVERSAL CON ROLLBACK)</a></strong>
@@ -635,6 +636,13 @@ def generar_html():
     <h2 id="f3-7">3.7 Publicación Automática en GitLab Pages e Intranet Corporativa sin Servidores</h2>
     <p>Al sincronizar tu carpeta con GitLab, el pipeline <code>.gitlab-ci.yml</code> toma automáticamente tus dashboards e informes HTML y los publica en una dirección web privada de tu empresa (<strong>GitLab Pages</strong>). Esto permite que tus directores o tu equipo puedan consultar el estado del proyecto en tiempo real desde cualquier dispositivo simplemente abriendo un enlace web seguro, sin necesidad de configurar servidores ni pagar licencias extra.</p>
 
+    <h2 id="f3-8">3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría</h2>
+    <p>Para evitar la fatiga de escribir prompts largos cada vez que inicias un informe o auditas un documento, y para no olvidar restricciones clave (<em>Drift</em>), Copilot en VS Code permite guardar <strong>Skills reutilizables</strong> como archivos de plantilla dentro de la carpeta <code>.github/prompts/</code> (por ejemplo, <code>resumen-ejecutivo.prompt.md</code>). Basta con escribir <strong><code>/</code></strong> en el chat de Copilot para invocar al instante toda la metodología:</p>
+    <ul>
+        <li><strong>Anatomía de 4 Bloques:</strong> Cada atajo define: 1) Rol y Objetivo, 2) Restricciones Negativas (<em>Never Do</em>: cero charla, cero cifras inventadas), 3) Estructura de Entrada (anclada con <code>#file</code> al informe o Excel del cliente) y 4) Formato de Entrega (tabla ejecutiva, resumen de 3 puntos o HTML autónomo).</li>
+        <li><strong>Portabilidad en GitLab:</strong> Al ser archivos Markdown normales dentro de la carpeta del proyecto, viajan en GitLab para que todo tu equipo de consultoría trabaje con exactamente los mismos atajos y estándares de calidad.</li>
+    </ul>
+
     <!-- FASE 4 -->
     <div id="fase4" class="phase-header">FASE 4: PUESTA EN MARCHA EN 1 CLIC (PLANTILLA UNIVERSAL CON ROLLBACK)</div>
 
@@ -842,7 +850,7 @@ def compilar_pdf_reportlab():
 
     t_version_data = [
         [Paragraph("Versión", ver_header), Paragraph("Fecha", ver_header), Paragraph("Responsable", ver_header), Paragraph("Descripción Detallada del Cambio y Alcance de la Versión", ver_header)],
-        [Paragraph("<b>v1.0</b>", ver_cell_bold), Paragraph("25/11/2026", ver_cell), Paragraph("Marco Gobernanza IA", ver_cell), Paragraph("<b>Edición Inicial Oficial Entregada:</b> Adaptación íntegra para Consultoría Senior (+65). Aislamiento total en carpeta local (<code>.vscode/settings.json</code>) sin tocar TI en <code>AppData</code>; desmitificación de la ruta <code>.github</code> en GitLab; entorno de pruebas (Sandbox); script de marcha atrás en 5 seg (<code>desactivar_gobernanza.bat</code>); mitigación de las 4 D; y publicación de cuadros de mando interactivos en GitLab Pages.<br/>🌐 <b>Versión viva online siempre actualizada:</b> <a href=\"https://javiercursocorreo-gif.github.io/adaptacion-copilot/ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB.html\" color=\"#1d4ed8\"><u><b>https://javiercursocorreo-gif.github.io/adaptacion-copilot ↗</b></u></a>", ver_cell)]
+        [Paragraph("<b>v1.0</b>", ver_cell_bold), Paragraph("25/11/2026", ver_cell), Paragraph("Marco Gobernanza IA", ver_cell), Paragraph("<b>Edición Inicial Oficial Entregada:</b> Adaptación íntegra para Consultoría Senior (+65). Aislamiento total en carpeta local (<code>.vscode/settings.json</code>) sin tocar TI en <code>AppData</code>; desmitificación de la ruta <code>.github</code> en GitLab; entorno de pruebas (Sandbox); script de marcha atrás en 5 seg (<code>desactivar_gobernanza.bat</code>); mitigación de las 4 D; GitLab Pages; y Skills reutilizables con «/» (<code>.github/prompts/</code>).<br/>🌐 <b>Versión viva online siempre actualizada:</b> <a href=\"https://javiercursocorreo-gif.github.io/adaptacion-copilot/ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB.html\" color=\"#1d4ed8\"><u><b>https://javiercursocorreo-gif.github.io/adaptacion-copilot ↗</b></u></a>", ver_cell)]
     ]
     t_version = Table(t_version_data, colWidths=[45, 60, 95, 323.27])
     t_version.setStyle(TableStyle([
@@ -903,6 +911,7 @@ def compilar_pdf_reportlab():
         Paragraph("3.5 Cero Trozos de Código Sueltos: Entrega de Soluciones Completas y Autónomas", toc_sub),
         Paragraph("3.6 Dashboards Ejecutivos Interactivos en HTML (Generative UI para Clientes y Directores)", toc_sub),
         Paragraph("3.7 Publicación Automática en GitLab Pages e Intranet Corporativa sin Servidores", toc_sub),
+        Paragraph("3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría", toc_sub),
         Spacer(1, 1.5),
         Paragraph("<b>FASE 4: PUESTA EN MARCHA EN 1 CLIC (PLANTILLA UNIVERSAL CON ROLLBACK)</b>", toc_phase),
         Paragraph("4.1 La Plantilla Universal de Consultoría (WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip)", toc_sub),
@@ -1180,6 +1189,9 @@ def compilar_pdf_reportlab():
 
     story.append(Paragraph("3.7 Publicación Automática en GitLab Pages e Intranet Corporativa sin Servidores", h1_style))
     story.append(Paragraph("Al sincronizar tu carpeta con GitLab, el pipeline <code>.gitlab-ci.yml</code> toma automáticamente tus dashboards e informes HTML y los publica en una dirección web privada de tu empresa (<b>GitLab Pages</b>), accesible desde cualquier dispositivo para tus directivos y equipo sin necesidad de configurar servidores web manuales ni pagar licencias extra.", body_style))
+
+    story.append(Paragraph("3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría", h1_style))
+    story.append(Paragraph("Para no reescribir prompts largos ni olvidar restricciones clave (<i>Drift</i>), Copilot en VS Code permite guardar <b>Skills reutilizables</b> en <code>.github/prompts/*.prompt.md</code> (ej. <code>resumen-ejecutivo.prompt.md</code>) e invocarlos al instante escribiendo <b><code>/</code></b> en el chat. Cada atajo sigue la estructura de 4 bloques (<b>Rol</b>, <b>Restricciones Negativas <i>Never Do</i></b>, <b>Entrada con <code>#file</code></b> y <b>Formato de Entrega</b>) y viaja dentro de GitLab para que todo el equipo de consultoría comparta los mismos estándares.", body_style))
     story.append(PageBreak())
 
     # PAGE 5: FASE 4 PUESTA EN MARCHA Y MATRIZ

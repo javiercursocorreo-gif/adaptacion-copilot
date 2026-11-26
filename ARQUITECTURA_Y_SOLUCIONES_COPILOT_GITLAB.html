@@ -310,7 +310,7 @@
                 <td><span class="version-tag">v1.0</span></td>
                 <td>25/11/2026</td>
                 <td>Marco Gobernanza IA</td>
-                <td><strong>Edición Inicial Oficial Entregada:</strong> Adaptación íntegra para Consultoría Senior (+65). Aislamiento total en carpeta local (<code>.vscode/settings.json</code>) sin tocar TI en <code>AppData</code>; desmitificación de la ruta <code>.github</code> en GitLab; entorno de pruebas (Sandbox); script de marcha atrás en 5 seg (<code>desactivar_gobernanza.bat</code>); mitigación de las 4 D; y publicación de cuadros de mando interactivos en GitLab Pages.</td>
+                <td><strong>Edición Inicial Oficial Entregada:</strong> Adaptación íntegra para Consultoría Senior (+65). Aislamiento total en carpeta local (<code>.vscode/settings.json</code>) sin tocar TI en <code>AppData</code>; desmitificación de la ruta <code>.github</code> en GitLab; entorno de pruebas (Sandbox); script de marcha atrás en 5 seg (<code>desactivar_gobernanza.bat</code>); mitigación de las 4 D; publicación en GitLab Pages; y arquitectura modular de Skills reutilizables con «/» (<code>.github/prompts/</code>).</td>
             </tr>
         </tbody>
     </table>
@@ -356,6 +356,7 @@
                     <li><a href="#f3-5">3.5 Cero Trozos de Código Sueltos: Entrega de Soluciones Completas y Autónomas</a></li>
                     <li><a href="#f3-6">3.6 Dashboards Ejecutivos Interactivos en HTML (Generative UI para Clientes y Directores)</a></li>
                     <li><a href="#f3-7">3.7 Publicación Automática en GitLab Pages e Intranet Corporativa sin Servidores</a></li>
+                    <li><a href="#f3-8">3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría</a></li>
                 </ul>
             </li>
             <li><strong><a href="#fase4">FASE 4: PUESTA EN MARCHA EN 1 CLIC (PLANTILLA UNIVERSAL CON ROLLBACK)</a></strong>
@@ -572,6 +573,13 @@
 
     <h2 id="f3-7">3.7 Publicación Automática en GitLab Pages e Intranet Corporativa sin Servidores</h2>
     <p>Al sincronizar tu carpeta con GitLab, el pipeline <code>.gitlab-ci.yml</code> toma automáticamente tus dashboards e informes HTML y los publica en una dirección web privada de tu empresa (<strong>GitLab Pages</strong>). Esto permite que tus directores o tu equipo puedan consultar el estado del proyecto en tiempo real desde cualquier dispositivo simplemente abriendo un enlace web seguro, sin necesidad de configurar servidores ni pagar licencias extra.</p>
+
+    <h2 id="f3-8">3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría</h2>
+    <p>Para evitar la fatiga de escribir prompts largos cada vez que inicias un informe o auditas un documento, y para no olvidar restricciones clave (<em>Drift</em>), Copilot en VS Code permite guardar <strong>Skills reutilizables</strong> como archivos de plantilla dentro de la carpeta <code>.github/prompts/</code> (por ejemplo, <code>resumen-ejecutivo.prompt.md</code>). Basta con escribir <strong><code>/</code></strong> en el chat de Copilot para invocar al instante toda la metodología:</p>
+    <ul>
+        <li><strong>Anatomía de 4 Bloques:</strong> Cada atajo define: 1) Rol y Objetivo, 2) Restricciones Negativas (<em>Never Do</em>: cero charla, cero cifras inventadas), 3) Estructura de Entrada (anclada con <code>#file</code> al informe o Excel del cliente) y 4) Formato de Entrega (tabla ejecutiva, resumen de 3 puntos o HTML autónomo).</li>
+        <li><strong>Portabilidad en GitLab:</strong> Al ser archivos Markdown normales dentro de la carpeta del proyecto, viajan en GitLab para que todo tu equipo de consultoría trabaje con exactamente los mismos atajos y estándares de calidad.</li>
+    </ul>
 
     <!-- FASE 4 -->
     <div id="fase4" class="phase-header">FASE 4: PUESTA EN MARCHA EN 1 CLIC (PLANTILLA UNIVERSAL CON ROLLBACK)</div>
