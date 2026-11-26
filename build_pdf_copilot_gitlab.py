@@ -415,7 +415,7 @@ def generar_html():
                     <li><a href="#f3-2">3.2 El Método de las 3 Preguntas Clave: ¿Cuándo, Cómo y Por Qué Trabajar en Silencio?</a></li>
                     <li><a href="#f3-3">3.3 Protocolo Cognitivo Elephant-Goldfish: Memoria del Proyecto vs. Revisiones Aisladas</a></li>
                     <li><a href="#f3-4">3.4 Trazabilidad de Versiones y Control de Entregables ([COMANDO XX])</a></li>
-                    <li><a href="#f3-5">3.5 Cero Trozos de Código Sueltos: Entrega de Soluciones Completas y Autónomas</a></li>
+                    <li><a href="#f3-5">3.5 Cero Trozos de Código Sueltos y Regla «Solo Borradores»</a></li>
                     <li><a href="#f3-6">3.6 Dashboards Ejecutivos Interactivos en HTML (Generative UI para Clientes y Directores)</a></li>
                     <li><a href="#f3-7">3.7 Publicación Automática en GitLab Pages e Intranet Corporativa sin Servidores</a></li>
                     <li><a href="#f3-8">3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría</a></li>
@@ -466,7 +466,7 @@ def generar_html():
     <p>Para mayor tranquilidad, un consultor no debe realizar experimentos directamente sobre los proyectos críticos de la empresa. Existen dos formas impecables de crear un "laboratorio seguro":</p>
     <ul>
         <li><strong>Opción 1: Carpeta Piloto Aislada (Recomendada):</strong> Crea en tu disco local una carpeta llamada <code>C:\\Piloto-Consultoria-IA\\</code>. Descomprime allí la plantilla y abre únicamente esa carpeta en VS Code (<code>code .</code>). Todo lo que pruebes ocurrirá dentro de esa caja de arena; tus repositorios reales de GitLab no se verán afectados.</li>
-        <li><strong>Opción 2: Perfiles Nativos de VS Code (Profiles):</strong> VS Code permite crear "perfiles de usuario" estancos. En el icono de engranaje (abajo a la izquierda), haz clic en <strong>Profiles ➔ Create Profile</strong> con el nombre <em>"Pruebas Gobernanza IA"</em>. Esto crea un espacio totalmente limpio, con su propia configuración, que puedes eliminar con un solo clic cuando termines tus pruebas.</li>
+        <li><strong>Opción 2: Perfiles Nativos de VS Code (Perfil Limpio de Gestión Documental):</strong> VS Code permite crear perfiles estancos. En el icono de engranaje (abajo a la izquierda), haz clic en <strong>Profiles ➔ Create Profile</strong> (ej. <em>"Gestión Documental IA"</em>). Además de aislar tus pruebas, te permite ocultar paneles de programación para trabajar cómodamente solo con informes y documentos.</li>
     </ul>
 
     <h2 id="f0-5">0.5 Tabla Comparativa de Parametrización Exhaustiva en settings.json</h2>
@@ -622,8 +622,8 @@ def generar_html():
     <h2 id="f3-4">3.4 Trazabilidad de Versiones y Control de Entregables ([COMANDO XX])</h2>
     <p>Cada versión del informe o cambio significativo se asocia a un identificador correlativo (ej. <code>[VERSIÓN 04: PLAN DE ACCIÓN]</code>) registrado en GitLab. Si el cliente solicita comparar la versión entregada en la reunión del martes con la del viernes, el consultor puede rastrear con exactitud matemática qué párrafos cambiaron y en qué fecha.</p>
 
-    <h2 id="f3-5">3.5 Cero Trozos de Código Sueltos: Entrega de Soluciones Completas y Autónomas</h2>
-    <p>Un consultor no debe manipular código ni parches manuales. Todo lo que el asistente entregue debe ser <strong>un producto terminado y autónomo</strong>: documentos íntegros en Markdown/Word listos para exportar a PDF, o aplicaciones web interactivas completas que abren con un doble clic en cualquier ordenador o iPad.</p>
+    <h2 id="f3-5">3.5 Cero Trozos de Código Sueltos y Regla «Solo Borradores»</h2>
+    <p>Un consultor dedicado a gestión documental no debe manipular código ni parches manuales. Todo lo entregado debe ser <strong>un producto terminado y autónomo</strong> (informes listos para exportar a PDF o dashboards interactivos). Además, rige la <strong>Regla de «Solo Borradores»</strong>: Copilot redacta borradores locales en tu carpeta (informes, actas o propuestas de correo), pero nunca envía comunicaciones ni publica hacia clientes sin tu revisión ejecutiva previa.</p>
 
     <h2 id="f3-6">3.6 Dashboards Ejecutivos Interactivos en HTML (Generative UI para Clientes y Directores)</h2>
     <p>Una de las mayores ventajas de esta metodología para un consultor es la generación de <strong>Cuadros de Mando Interactivos (HTML)</strong>. En lugar de enviar un informe estático de 60 páginas que nadie lee, la IA compila una página web interactiva (autónoma, en un único archivo, con diseño corporativo elegante) que incluye:</p>
@@ -638,7 +638,7 @@ def generar_html():
     <p>Al sincronizar tu carpeta con GitLab, el pipeline <code>.gitlab-ci.yml</code> toma automáticamente tus dashboards e informes HTML y los publica en una dirección web privada de tu empresa (<strong>GitLab Pages</strong>). Esto permite que tus directores o tu equipo puedan consultar el estado del proyecto en tiempo real desde cualquier dispositivo simplemente abriendo un enlace web seguro, sin necesidad de configurar servidores ni pagar licencias extra.</p>
 
     <h2 id="f3-8">3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría</h2>
-    <p>Para evitar la fatiga de escribir prompts largos cada vez que inicias un informe o auditas un documento, y para no olvidar restricciones clave (<em>Drift</em>), Copilot en VS Code permite guardar <strong>Skills reutilizables</strong> como archivos de plantilla dentro de la carpeta <code>.github/prompts/</code> (por ejemplo, <code>resumen-ejecutivo.prompt.md</code>). Basta con escribir <strong><code>/</code></strong> en el chat de Copilot para invocar al instante toda la metodología:</p>
+    <p>Para evitar la fatiga de escribir prompts largos cada vez que inicias un informe o auditas un documento, y para no olvidar restricciones clave (<em>Drift</em>), Copilot en VS Code permite guardar <strong>Skills reutilizables</strong> como archivos de plantilla dentro de la carpeta <code>.github/prompts/</code> (por ejemplo, <code>resumen-ejecutivo.prompt.md</code>). Al escribir <strong><code>/</code></strong> aparece un menú clicable (opcional: no hace falta memorizar comandos, también puedes pedirlo hablando con naturalidad):</p>
     <ul>
         <li><strong>Anatomía de 4 Bloques:</strong> Cada atajo define: 1) Rol y Objetivo, 2) Restricciones Negativas (<em>Never Do</em>: cero charla, cero cifras inventadas), 3) Estructura de Entrada (anclada con <code>#file</code> al informe o Excel del cliente) y 4) Formato de Entrega (tabla ejecutiva, resumen de 3 puntos o HTML autónomo).</li>
         <li><strong>Portabilidad en GitLab:</strong> Al ser archivos Markdown normales dentro de la carpeta del proyecto, viajan en GitLab para que todo tu equipo de consultoría trabaje con exactamente los mismos atajos y estándares de calidad.</li>
@@ -909,7 +909,7 @@ def compilar_pdf_reportlab():
         Paragraph("3.2 El Método de las 3 Preguntas Clave: ¿Cuándo, Cómo y Por Qué Trabajar en Silencio?", toc_sub),
         Paragraph("3.3 Protocolo Cognitivo Elephant-Goldfish: Memoria del Proyecto vs. Revisiones Aisladas", toc_sub),
         Paragraph("3.4 Trazabilidad de Versiones y Control de Entregables ([COMANDO XX])", toc_sub),
-        Paragraph("3.5 Cero Trozos de Código Sueltos: Entrega de Soluciones Completas y Autónomas", toc_sub),
+        Paragraph("3.5 Cero Trozos de Código Sueltos y Regla «Solo Borradores»", toc_sub),
         Paragraph("3.6 Dashboards Ejecutivos Interactivos en HTML (Generative UI para Clientes y Directores)", toc_sub),
         Paragraph("3.7 Publicación Automática en GitLab Pages e Intranet Corporativa sin Servidores", toc_sub),
         Paragraph("3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría", toc_sub),
@@ -962,7 +962,7 @@ def compilar_pdf_reportlab():
     story.append(Spacer(1, 2.5))
 
     story.append(Paragraph("0.4 Entorno de Pruebas Seguro (Sandbox Piloto): Cómo Experimentar sin Tocar tu Día a Día", h1_style))
-    story.append(Paragraph("Para experimentar con total tranquilidad, el consultor no debe tocar sus carpetas habituales. Se recomienda crear una carpeta de laboratorio dedicada (ej. <code>C:\\Piloto-Consultoria\\</code>) o utilizar los <b>Perfiles Nativos de VS Code (Profiles)</b> desde el icono de engranaje (abajo a la izquierda) ➔ <i>Profiles ➔ Create Profile</i>, creando una burbuja virtual independiente que se puede eliminar con un solo clic al terminar las pruebas.", body_style))
+    story.append(Paragraph("Para experimentar con total tranquilidad, el consultor no debe tocar sus carpetas habituales. Se recomienda crear una carpeta de laboratorio dedicada (ej. <code>C:\\Piloto-Consultoria\\</code>) o utilizar los <b>Perfiles Nativos de VS Code (Perfil Limpio de Gestión Documental)</b> desde el engranaje ➔ <i>Profiles ➔ Create Profile</i>: además de crear una burbuja aislada eliminable en un clic, permite ocultar paneles de programación para ver solo informes y documentos.", body_style))
     story.append(Spacer(1, 2.5))
 
     story.append(Paragraph("0.5 Tabla Comparativa de Parametrización en settings.json", h1_style))
@@ -1182,8 +1182,8 @@ def compilar_pdf_reportlab():
     story.append(Paragraph("3.4 Trazabilidad de Versiones y Control de Entregables ([COMANDO XX])", h1_style))
     story.append(Paragraph("Cada avance significativo se asocia a un identificador secuencial (ej. <code>[VERSIÓN 04: PLAN DE ACCIÓN]</code>) registrado en GitLab. Si el cliente solicita comparar la versión de hace dos semanas con la actual, el consultor puede rastrear con exactitud qué párrafos cambiaron y bajo qué requerimiento.", body_style))
 
-    story.append(Paragraph("3.5 Cero Trozos de Código Sueltos: Entrega de Soluciones Completas y Autónomas", h1_style))
-    story.append(Paragraph("Un consultor no debe manipular código ni parches manuales ('copia esto en la línea 45'). Todo lo entregado por la IA debe ser <b>un producto terminado y autónomo</b>: documentos completos en Markdown/Word listos para exportar a PDF, o micro-aplicaciones HTML autónomas que abren con un doble clic en cualquier ordenador o tablet sin servidores intermedios.", body_style))
+    story.append(Paragraph("3.5 Cero Trozos de Código Sueltos y Regla «Solo Borradores»", h1_style))
+    story.append(Paragraph("Un consultor dedicado a gestión documental no debe manipular código ni parches manuales. Todo lo entregado debe ser <b>un producto terminado y autónomo</b> (informes listos para PDF o dashboards HTML). Además, rige la <b>Regla de «Solo Borradores»</b>: Copilot prepara borradores locales (informes, actas o propuestas de correo), pero nunca envía ni publica nada hacia clientes sin revisión ejecutiva humana.", body_style))
 
     story.append(Paragraph("3.6 Dashboards Ejecutivos Interactivos en HTML (Generative UI para Clientes y Directores)", h1_style))
     story.append(Paragraph("En lugar de presentar memorias áridas de 80 páginas que nadie lee, la IA compila <b>Cuadros de Mando Interactivos (HTML)</b> en un único archivo con diseño corporativo elegante: filtros por departamento, matrices de riesgo clicables (rojo / amarillo / verde) y cronogramas visuales que causan un impacto profesional extraordinario en comités de dirección, realizando siempre una <b>auto-auditoría previa</b> de enlaces y coherencia antes de entregar.", body_style))
@@ -1192,7 +1192,7 @@ def compilar_pdf_reportlab():
     story.append(Paragraph("Al sincronizar tu carpeta con GitLab, el pipeline <code>.gitlab-ci.yml</code> toma automáticamente tus dashboards e informes HTML y los publica en una dirección web privada de tu empresa (<b>GitLab Pages</b>), accesible desde cualquier dispositivo para tus directivos y equipo sin necesidad de configurar servidores web manuales ni pagar licencias extra.", body_style))
 
     story.append(Paragraph("3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría", h1_style))
-    story.append(Paragraph("Para no reescribir prompts largos ni olvidar restricciones clave (<i>Drift</i>), Copilot en VS Code permite guardar <b>Skills reutilizables</b> en <code>.github/prompts/*.prompt.md</code> (ej. <code>resumen-ejecutivo.prompt.md</code>) e invocarlos al instante escribiendo <b><code>/</code></b> en el chat. Cada atajo sigue la estructura de 4 bloques (<b>Rol</b>, <b>Restricciones Negativas <i>Never Do</i></b>, <b>Entrada con <code>#file</code></b> y <b>Formato de Entrega</b>) y viaja dentro de GitLab para que todo el equipo de consultoría comparta los mismos estándares.", body_style))
+    story.append(Paragraph("Para no reescribir prompts largos ni olvidar restricciones clave (<i>Drift</i>), Copilot en VS Code permite guardar <b>Skills reutilizables</b> en <code>.github/prompts/*.prompt.md</code> (ej. <code>resumen-ejecutivo.prompt.md</code>). Al pulsar <b><code>/</code></b> aparece un menú clicable (opcional: no hace falta memorizar comandos, también funciona pidiéndolo con naturalidad). Cada atajo sigue 4 bloques (<b>Rol</b>, <b>Restricciones Negativas <i>Never Do</i></b>, <b>Entrada con <code>#file</code></b> y <b>Formato de Entrega</b>) y viaja en GitLab para todo el equipo.", body_style))
     story.append(PageBreak())
 
     # PAGE 5: FASE 4 PUESTA EN MARCHA Y MATRIZ
