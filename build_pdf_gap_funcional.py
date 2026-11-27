@@ -123,12 +123,19 @@ def generar_html():
     • <strong>Modo Alta Precisión (Descomposición en Sub-piezas):</strong> Si un requisito grande está a medias (ej. <em>pantalla hecha, cálculo hecho, pero falta el informe</em>), se divide en 3 filas atómicas (<code>REQ-010a</code>, <code>REQ-010b</code>, <code>REQ-010c</code>). Así dos filas suman 100% y una 0%, dando exactamente <strong>66,7%</strong> matemático sin subjetividad.
   </div>
 
-  <h2>5. ¿Skill o Agente dedicado en Copilot? (Cómo implementarlo)</h2>
+  <h2>5. ¿Skill o Agente dedicado en Copilot? (Trabajan juntos)</h2>
   <div class="box-ok">
-    <strong>🧩 No son excluyentes, trabajan juntos:</strong><br/>
-    • El <strong>Agente</strong> (Modo Agente en Copilot VS Code, o un <em>Custom Agent</em> en <code>.github/agents/</code>) es el <strong>trabajador autónomo</strong> capaz de leer tu carpeta de análisis funcionales y rellenar el archivo CSV.<br/>
-    • El <strong>Skill</strong> (archivo <code>.github/prompts/analizar-gap-requisitos.prompt.md</code> con <code>mode: agent</code>) es la <strong>receta obligatoria</strong> con las 9 columnas y las 5 reglas de determinismo que ese Agente debe seguir paso a paso.<br/>
-    Al lanzarlo, el Agente ejecuta siempre exactamente el mismo procedimiento determinista sobre tus documentos sin improvisar.
+    <strong>🧩 No son excluyentes, trabajan juntos (y ya vienen precreados en el ZIP):</strong><br/>
+    • El <strong>Agente</strong> (<code>.github/agents/analista-gap.agent.md</code>) es el <strong>trabajador autónomo</strong> que aparece automáticamente en tu desplegable de Copilot al descomprimir el ZIP, sin tener que configurarlo a mano.<br/>
+    • El <strong>Skill</strong> (<code>.github/prompts/analizar-gap-requisitos.prompt.md</code>) es la <strong>receta obligatoria</strong> con las 9 columnas y las 5 reglas de determinismo que ese Agente obedece paso a paso.
+  </div>
+
+  <h2>6. Cómo arrancarlo en Copilot en 2 clics (y por qué usamos <code>.csv</code> para Excel)</h2>
+  <div class="box-info">
+    <strong>⚡ Arranque Práctico en tu PC de Empresa:</strong><br/>
+    1. <strong>¿Por qué <code>.csv</code> y no <code>.xlsx</code>?</strong> Copilot edita directamente archivos <code>.csv</code> sin errores (mientras que un <code>.xlsx</code> cerrado es binario). Nuestro archivo <code>plantilla_matriz_gap_funcional.csv</code> usa separador <code>;</code> para que <strong>Microsoft Excel lo abra en columnas con un doble clic</strong> ejecutando automáticamente todas las fórmulas.<br/>
+    2. <strong>Paso 1:</strong> Abre Copilot Chat y selecciona en el desplegable de agentes a <strong>«Analista Gap»</strong> (o escribe <code>/analizar-gap-requisitos</code>).<br/>
+    3. <strong>Paso 2:</strong> Adjunta con <code>#file</code> el documento de nuevos requisitos del cliente y envíalo. Copilot rellenará las filas nuevas en <code>plantilla_matriz_gap_funcional.csv</code> respetando intactas las ya marcadas como <code>APROBADO</code>.
   </div>
 </div>
 </body>
@@ -229,16 +236,26 @@ def generar_pdf():
     story.append(Paragraph("4. Cómo se miden los requisitos a medias (PARCIAL): 50% fijo vs. Sub-piezas", h1_style))
     story.append(Paragraph("• <b>Estándar Base (Simple — 0% / 50% / 100%):</b> <code>CUBIERTO</code> suma 100%, <code>GAP_NUEVO</code> suma 0% y cualquier requisito a medias (<code>PARCIAL</code>) suma fijo un <b>50%</b> por fórmula de Excel.<br/>• <b>Modo Alta Precisión (Descomposición en Sub-piezas):</b> Si un requisito complejo está a medias (ej. pantalla y cálculo hechos, pero falta el informe), se parte en 3 filas atómicas (<code>REQ-010a/b/c</code>): dos dan 100% y una 0%, obteniendo un <b>66,7%</b> matemático exacto sin subjetividad.", body_style))
 
-    # 5. Skill vs Agente
-    story.append(Paragraph("5. ¿Skill o Agente dedicado en Copilot? (Trabajan juntos)", h1_style))
-    p_ok = Table([[Paragraph("<b>🧩 Arquitectura Combinada (Agente + Receta):</b> El <b>Agente</b> (Modo Agente en Copilot VS Code o <i>Custom Agent</i> en <code>.github/agents/</code>) es el trabajador autónomo que lee tus documentos funcionales y rellena el CSV. El <b>Skill</b> (<code>.github/prompts/analizar-gap-requisitos.prompt.md</code> con <code>mode: agent</code>) es la receta estricta con las 9 columnas y 5 reglas que ese Agente obedece paso a paso para no improvisar.", body_style)]], colWidths=[PAGE_WIDTH])
+    # 5. Skill vs Agente + Arranque en 2 clics
+    story.append(Paragraph("5. Agente Precreado + Skill en el ZIP (Se crea solo al descomprimir)", h1_style))
+    p_ok = Table([[Paragraph("<b>🧩 Todo incluido en el Kit ZIP:</b> El agente <code>.github/agents/analista-gap.agent.md</code> (trabajador autónomo) aparece automáticamente en el desplegable de Copilot sin configurarlo a mano, y el Skill <code>/analizar-gap-requisitos</code> le impone la receta determinista de las 9 columnas.", body_style)]], colWidths=[PAGE_WIDTH])
     p_ok.setStyle(TableStyle([
         ("BACKGROUND", (0,0), (-1,-1), colors.HexColor("#F0FDF4")),
         ("BOX", (0,0), (-1,-1), 0.8, colors.HexColor("#16A34A")),
-        ("TOPPADDING", (0,0), (-1,-1), 4), ("BOTTOMPADDING", (0,0), (-1,-1), 4),
+        ("TOPPADDING", (0,0), (-1,-1), 3.5), ("BOTTOMPADDING", (0,0), (-1,-1), 3.5),
         ("LEFTPADDING", (0,0), (-1,-1), 6), ("RIGHTPADDING", (0,0), (-1,-1), 6),
     ]))
     story.append(KeepTogether([p_ok]))
+
+    story.append(Paragraph("6. Cómo arrancarlo en Copilot en 2 clics (y por qué usamos .csv para Excel)", h1_style))
+    p_run = Table([[Paragraph("<b>⚡ Puesta en marcha:</b> <b>1) Por qué <code>.csv</code>:</b> Copilot edita directamente texto <code>.csv</code> con separador <code>;</code> (un <code>.xlsx</code> cerrado es binario) y Microsoft Excel lo abre con doble clic ejecutando las fórmulas. <b>2) Arranque:</b> En Copilot Chat elige el agente <b>«Analista Gap»</b> (o escribe <code>/analizar-gap-requisitos</code>), adjunta con <code>#file</code> los requisitos nuevos del cliente y Copilot rellenará <code>plantilla_matriz_gap_funcional.csv</code> sin tocar las filas <code>APROBADO</code>.", body_style)]], colWidths=[PAGE_WIDTH])
+    p_run.setStyle(TableStyle([
+        ("BACKGROUND", (0,0), (-1,-1), colors.HexColor("#F0F9FF")),
+        ("BOX", (0,0), (-1,-1), 0.8, colors.HexColor("#0284C7")),
+        ("TOPPADDING", (0,0), (-1,-1), 3.5), ("BOTTOMPADDING", (0,0), (-1,-1), 3.5),
+        ("LEFTPADDING", (0,0), (-1,-1), 6), ("RIGHTPADDING", (0,0), (-1,-1), 6),
+    ]))
+    story.append(KeepTogether([p_run]))
 
     doc.build(story, canvasmaker=NumberedCanvas)
     print("✅ PDF generado:", PDF_FILE)

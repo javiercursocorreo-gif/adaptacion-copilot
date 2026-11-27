@@ -655,7 +655,8 @@ def generar_html():
         <ul>
             <li><code>.vscode/settings.json</code>: Parámetros de Cero-Submits y confidencialidad precalibrados para consultoría.</li>
             <li><code>.github/copilot-instructions.md</code>: Las directivas maestras de estilo, rigor analítico, regla «Solo Borradores» y cero duplicación.</li>
-            <li><code>.github/prompts/</code>: <strong>3 Skills reutilizables</strong> listos para usar (<code>/resumen-ejecutivo</code>, <code>/auditar-excel-datos</code> y <code>/dashboard-html</code>).</li>
+            <li><code>.github/prompts/</code>: <strong>4 Skills reutilizables</strong> listos para usar (<code>/resumen-ejecutivo</code>, <code>/auditar-excel-datos</code>, <code>/dashboard-html</code> y <code>/analizar-gap-requisitos</code>).</li>
+            <li><code>.github/agents/analista-gap.agent.md</code> + <code>plantilla_matriz_gap_funcional.csv</code>: <strong>Agente dedicado ya precreado</strong> y plantilla Excel lista para el análisis de Gap Funcional determinista.</li>
             <li><code>.gitlab-ci.yml</code>: Automatización para publicar dashboards en GitLab Pages.</li>
             <li><code>desactivar_gobernanza.bat</code>: <strong>El botón de marcha atrás en 1 clic para Windows</strong> (restaura el estado original instantáneamente).</li>
             <li><code>LEEME_PRIMERO.txt</code>: Guía rápida ejecutiva en 3 pasos explicada sin tecnicismos.</li>
@@ -1213,7 +1214,7 @@ def compilar_pdf_reportlab():
     p_kit_intro = [
         Paragraph("🟢 <b>MÉTODO OFICIAL Y UNIVERSAL PARA CONSULTORÍA CORPORATIVA</b>", ParagraphStyle('UKIT', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=8.5, leading=11.5, textColor=colors.HexColor('#16A34A'))),
         Paragraph("<b>4.1 La Plantilla Universal de Consultoría (WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip)</b>", h2_style),
-        Paragraph("Para empezar en cualquier ordenador corporativo (Windows o Mac) sin complicaciones técnicas, hemos empaquetado toda la arquitectura en el archivo comprimido: <a href=\"https://javiercursocorreo-gif.github.io/adaptacion-copilot/WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip\" color=\"#1d4ed8\"><u><b>WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip (Clic para Descargar) ↗</b></u></a>.<br/>Este paquete <b>ya incluye todo configurado por dentro</b>: <code>.vscode/settings.json</code> precalibrado, las reglas de gobernanza en <code>.github/copilot-instructions.md</code>, la carpeta <code>.github/prompts/</code> con <b>3 Skills de consultoría</b> (<code>/resumen-ejecutivo</code>, <code>/auditar-excel-datos</code>, <code>/dashboard-html</code>), el pipeline <code>.gitlab-ci.yml</code> para GitLab Pages, <code>desactivar_gobernanza.bat</code> y <code>LEEME_PRIMERO.txt</code>.", feat_body),
+        Paragraph("Para empezar en cualquier ordenador corporativo (Windows o Mac) sin complicaciones técnicas, hemos empaquetado toda la arquitectura en el archivo comprimido: <a href=\"https://javiercursocorreo-gif.github.io/adaptacion-copilot/WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip\" color=\"#1d4ed8\"><u><b>WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip (Clic para Descargar) ↗</b></u></a>.<br/>Este paquete <b>ya incluye todo configurado por dentro</b>: <code>.vscode/settings.json</code> precalibrado, las reglas en <code>.github/copilot-instructions.md</code>, <code>.github/prompts/</code> con <b>4 Skills</b> (incluyendo <code>/analizar-gap-requisitos</code>), el agente precreado <code>.github/agents/analista-gap.agent.md</code>, <code>plantilla_matriz_gap_funcional.csv</code>, <code>.gitlab-ci.yml</code>, <code>desactivar_gobernanza.bat</code> y <code>LEEME_PRIMERO.txt</code>.", feat_body),
         Spacer(1, 2),
         Paragraph("<b>4.2 Activación Paso a Paso en tu Portátil Corporativo Windows o Mac</b>", h2_style),
         Spacer(1, 1),
@@ -1285,6 +1286,7 @@ def empaquetar_plantilla_zip():
     os.makedirs(os.path.join(temp_dir, ".vscode"), exist_ok=True)
     os.makedirs(os.path.join(temp_dir, ".github"), exist_ok=True)
     os.makedirs(os.path.join(temp_dir, ".github", "prompts"), exist_ok=True)
+    os.makedirs(os.path.join(temp_dir, ".github", "agents"), exist_ok=True)
     os.makedirs(os.path.join(temp_dir, ".gitlab"), exist_ok=True)
     os.makedirs(os.path.join(temp_dir, "informes"), exist_ok=True)
     os.makedirs(os.path.join(temp_dir, "fuentes_datos"), exist_ok=True)
@@ -1403,6 +1405,50 @@ Archivo HTML único autocontenido (CSS y JS integrados, sin dependencias externa
 """
     with open(os.path.join(temp_dir, ".github", "prompts", "dashboard-html.prompt.md"), "w", encoding="utf-8") as f:
         f.write(prompt_dashboard)
+
+    prompt_gap = """---
+mode: agent
+agent: Analista Gap
+description: Compara nuevos requisitos del cliente frente a los análisis funcionales del producto y rellena plantilla_matriz_gap_funcional.csv de forma determinista.
+---
+# ROL Y OBJETIVO
+Ejecuta el procedimiento determinista de análisis de Gap Funcional comparando los nuevos requisitos indicados (`#file`) contra los análisis funcionales vigentes del producto (`@workspace` o `#folder`) y actualiza `plantilla_matriz_gap_funcional.csv`.
+
+# RESTRICCIONES NEGATIVAS (NEVER DO)
+- Prohibido estimar porcentajes a ojo: la columna `%_Cobertura` debe conservar siempre la fórmula Excel `=SI(F{fila}="CUBIERTO";100%;SI(F{fila}="PARCIAL";50%;0%))`.
+- Prohibido marcar `CUBIERTO` o `PARCIAL` sin copiar la cita textual exacta en `Evidencia_Literal`. Si no hay evidencia literal -> `GAP_NUEVO`.
+- Prohibido modificar o reevaluar filas donde `Validado_Humano` sea `APROBADO`.
+
+# PASOS OBLIGATORIOS
+1. Descompón los requisitos nuevos en requisitos atómicos (`1 fila = 1 acción verificable`).
+2. Busca la evidencia literal en los análisis funcionales vigentes.
+3. Clasifica `Estado_Cobertura` estrictamente en: `CUBIERTO`, `PARCIAL`, `GAP_NUEVO` o `AMBIGUO`.
+4. Escribe las filas resultantes en `plantilla_matriz_gap_funcional.csv` manteniendo el separador `;` para abrir directo en Excel.
+"""
+    with open(os.path.join(temp_dir, ".github", "prompts", "analizar-gap-requisitos.prompt.md"), "w", encoding="utf-8") as f:
+        f.write(prompt_gap)
+
+    # 2c. Agente Precreado en .github/agents/analista-gap.agent.md
+    agent_gap = """---
+name: Analista Gap
+description: Agente especialista en comparar nuevos requisitos de clientes frente a análisis funcionales existentes y rellenar la matriz CSV/Excel de forma determinista.
+---
+Eres el **Analista Gap Funcional** del equipo de consultoría. Tu única misión es comparar nuevos requisitos de clientes contra los documentos funcionales vigentes del producto y mantener actualizada la matriz `plantilla_matriz_gap_funcional.csv`.
+
+## REGLAS INQUEBRANTABLES DE DETERMINISMO
+1. **Descomposición Atómica:** Cada fila representa 1 única acción verificable.
+2. **Candado Quote-First:** Nunca marques `CUBIERTO` o `PARCIAL` sin copiar la cita textual exacta del análisis funcional en `Evidencia_Literal` y su referencia en `Doc_Producto_Ref`. Sin cita literal -> `GAP_NUEVO`.
+3. **Lista Cerrada:** `Estado_Cobertura` solo admite `CUBIERTO`, `PARCIAL`, `GAP_NUEVO` o `AMBIGUO`.
+4. **Cálculo en Excel:** Jamás escribas porcentajes a mano; deja siempre la fórmula `=SI(F{fila}="CUBIERTO";100%;SI(F{fila}="PARCIAL";50%;0%))` en `%_Cobertura` usando `;` como separador de columnas CSV.
+5. **Congelación Incremental:** Respeta intactas las filas marcadas con `Validado_Humano = APROBADO`.
+"""
+    with open(os.path.join(temp_dir, ".github", "agents", "analista-gap.agent.md"), "w", encoding="utf-8") as f:
+        f.write(agent_gap)
+
+    # 2d. Plantilla CSV lista para Excel dentro del ZIP
+    csv_src = os.path.join(BASE_DIR, "plantilla_matriz_gap_funcional.csv")
+    if os.path.exists(csv_src):
+        shutil.copyfile(csv_src, os.path.join(temp_dir, "plantilla_matriz_gap_funcional.csv"))
 
     # 3. .gitlab-ci.yml
     gitlab_ci_content = """# Publicación Automática de Dashboards e Informes en GitLab Pages
