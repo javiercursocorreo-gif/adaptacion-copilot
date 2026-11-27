@@ -644,6 +644,7 @@ def generar_html():
         <li><strong>Anatomía de 4 Bloques:</strong> Cada atajo define: 1) Rol y Objetivo, 2) Restricciones Negativas (<em>Never Do</em>: cero charla, cero cifras inventadas), 3) Estructura de Entrada (anclada con <code>#file</code> al informe o Excel del cliente) y 4) Formato de Entrega (tabla ejecutiva, resumen de 3 puntos o HTML autónomo).</li>
         <li><strong>Portabilidad en GitLab:</strong> Al ser archivos Markdown normales dentro de la carpeta del proyecto, viajan en GitLab para que todo tu equipo de consultoría trabaje con exactamente los mismos atajos y estándares de calidad.</li>
         <li><strong>Fábrica de Conocimiento en 3 Pilares y Agente Curador:</strong> Para evitar fallos con carpetas masivas de manuales Word/Excel, los <strong>Skills</strong> (<em>cómo trabajar</em>) se combinan con <strong>Conocimiento del Dominio</strong> (glosario de módulos y reglas oficiales) y una <strong>Guía de Acceso a Datos</strong> (indexación previa determinista antes de evaluar), más un rol <strong>Curador</strong> que detecta lagunas documentales.</li>
+        <li><strong>Blueprint Previo, Patrón Scout ➔ Maker ➔ Checker y Carpeta Limpia (<em>Zero-Noise</em>):</strong> Antes de generar informes o scripts, se fija un contrato breve (Entradas, Salidas y esquema JSON/Excel) separando extracción (<em>Scout</em>), evaluación (<em>Maker</em>) y validación determinista (<em>Checker</em>), e inicializando cada piloto privado en carpeta aislada.</li>
     </ul>
 
     <!-- FASE 4 -->
@@ -719,6 +720,7 @@ def generar_html():
         <li><strong>Agentes Remotos en la Nube y Modo Voz en Paralelo:</strong> Copilot ejecuta localmente en tu ordenador (no dispone de agentes en la nube trabajando con el portátil cerrado ni dictado paralelo mientras edita).</li>
         <li><strong>Integración Nativa con Google Workspace y Modo «Tarea»:</strong> La conexión directa con Gmail/Docs/Sheets/Calendar y el volcado automático de PDFs a Calendar son exclusivos del ecosistema Google.</li>
         <li><strong>Niveles de Pensamiento Ajustables, <code>/btw</code> y <code>Cmd+L</code>:</strong> La regulación manual de profundidad (<em>Low/Medium/High/Extra High</em>), el Plan B con API Key de AI Studio y las consultas laterales <code>/btw</code> son propios del motor Antigravity.</li>
+        <li><strong>Orquestador Multi-Modelo, <code>/grill-me</code>, <em>Zero-Idle Dispatcher</em> y Modo <em>Knowledge Work</em>:</strong> La separación nativa entre modelo planificador y ejecutor (<em>Orchestrator</em>), la entrevista previa <code>/grill-me</code>, los despertadores sin consumo de tokens y la vista simplificada <em>Knowledge Work</em> pertenecen a Antigravity 2.0.</li>
     </ul>
 
     <footer>
@@ -1207,7 +1209,7 @@ def compilar_pdf_reportlab():
     story.append(Paragraph("Al sincronizar tu carpeta con GitLab, el pipeline <code>.gitlab-ci.yml</code> toma automáticamente tus dashboards e informes HTML y los publica en una dirección web privada de tu empresa (<b>GitLab Pages</b>), accesible desde cualquier dispositivo para tus directivos y equipo sin necesidad de configurar servidores web manuales ni pagar licencias extra.", body_style))
 
     story.append(Paragraph("3.8 Skills Reutilizables en Copilot (.github/prompts/): Atajos con «/» para Consultoría", h1_style))
-    story.append(Paragraph("Para no reescribir prompts largos ni olvidar restricciones clave (<i>Drift</i>), Copilot en VS Code permite guardar <b>Skills reutilizables</b> en <code>.github/prompts/*.prompt.md</code> (invocables con <b><code>/</code></b> o pidiéndolos con naturalidad). Integrados como <b>Fábrica de Conocimiento en 3 Pilares</b>: <b>Skills</b> (4 bloques) + <b>Conocimiento del Dominio</b> (glosarios/métricas) + <b>Guía de Acceso a Datos</b> (indexación previa cuando hay decenas de manuales Word/Excel) + rol <b>Curador</b>, todo sincronizado en GitLab.", body_style))
+    story.append(Paragraph("Para no reescribir prompts largos ni olvidar restricciones clave (<i>Drift</i>), Copilot en VS Code permite guardar <b>Skills reutilizables</b> en <code>.github/prompts/*.prompt.md</code> (invocables con <b><code>/</code></b> o pidiéndolos con naturalidad). Integrados como <b>Fábrica de Conocimiento en 3 Pilares</b>: <b>Skills</b> (4 bloques) + <b>Conocimiento del Dominio</b> + <b>Guía de Acceso a Datos</b> (indexación previa en manuales Word/Excel) + rol <b>Curador</b>, junto a la regla del <b>Blueprint Previo</b> (<b>Scout ➔ Maker ➔ Checker</b>) y <b>Carpeta Limpia</b> para pilotos en GitLab.", body_style))
     story.append(PageBreak())
 
     # PAGE 5: FASE 4 PUESTA EN MARCHA Y MATRIZ
@@ -1267,7 +1269,7 @@ def compilar_pdf_reportlab():
 
     # 4.4 CAPACIDADES EXCLUSIVAS DE ANTIGRAVITY NO DISPONIBLES EN COPILOT
     story.append(Paragraph("4.4 Capacidades Exclusivas de Antigravity no Disponibles en Copilot", h1_style))
-    story.append(Paragraph("Con total transparencia sobre el alcance de cada entorno, estas capacidades actuales de <b>Antigravity</b> no están disponibles en <b>Copilot (VS Code)</b>: <b>1) Enjambres paralelos (<code>/swarm</code>)</b> en copias aisladas y tablón compartido (Copilot opera como agente único); <b>2) Navegador autónomo con comentarios visuales (<i>Pin &amp; Comment</i>)</b>; <b>3) Agentes Remotos en la nube</b> y <b>Modo Voz en paralelo</b>; <b>4) Google Workspace / Modo <i>Tarea</i></b>; y <b>5) Niveles de pensamiento ajustables (<i>Low..Extra High</i>), atajos <code>/btw</code> / <code>Cmd+L</code> y Plan B con API Key de AI Studio</b>.", body_style))
+    story.append(Paragraph("Con total transparencia sobre el alcance de cada entorno, estas capacidades actuales de <b>Antigravity</b> no están disponibles en <b>Copilot (VS Code)</b>: <b>1) Enjambres (<code>/swarm</code>)</b> en copias aisladas; <b>2) Navegador autónomo (<i>Pin &amp; Comment</i>)</b>; <b>3) Agentes Remotos</b> y <b>Modo Voz paralelo</b>; <b>4) Google Workspace / <i>Tarea</i></b>; <b>5) Pensamiento ajustable, <code>/btw</code>, <code>Cmd+L</code> y Plan B API Key</b>; y <b>6) Orquestador multi-modelo, <code>/grill-me</code>, <i>Zero-Idle Dispatcher</i> y modo <i>Knowledge Work</i></b>.", body_style))
 
     doc.build(story, canvasmaker=NumberedCanvas)
     print(f"✅ PDF generado para consultoría: {PDF_FILE}", flush=True)
