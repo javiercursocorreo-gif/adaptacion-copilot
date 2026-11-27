@@ -130,13 +130,13 @@ def build_pdf():
     story.append(Spacer(1, 4))
 
     # Intro
-    intro_p = ("Esta ficha ejecutiva centraliza los <b>dos únicos recursos oficiales</b> preparados para consultoría estratégica y de negocio. "
+    intro_p = ("Esta ficha ejecutiva centraliza los <b>recursos oficiales y herramientas de campo</b> preparados para consultoría estratégica y de negocio. "
                "Permite implementar gobernanza estricta en <b>Copilot</b> dentro de <b>VS Code</b> sobre repositorios "
                "corporativos en <b>GitLab</b>, garantizando aislamiento total del puesto de trabajo corporativo y reversión garantizada en 5 segundos.")
     story.append(Paragraph(intro_p, intro_style))
     story.append(Spacer(1, 6))
 
-    # Table with the 2 direct download links
+    # Table with the 4 direct download links (2 Arquitectura + 2 Trabajo de Campo)
     story.append(Paragraph("📋 Recursos Oficiales Directos (Descarga en 1 Clic)", h2_style))
 
     pages_base = "https://javiercursocorreo-gif.github.io/adaptacion-copilot"
@@ -155,19 +155,29 @@ def build_pdf():
         [
             Paragraph("📦 <b>Kit de Inicio en 1 Clic (ZIP)</b>", cell_title),
             Paragraph(f'<a href="{pages_base}/WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip" color="#1d4ed8"><u><b>Descargar Kit ZIP ↗</b></u></a>', cell_link),
-            Paragraph("Plantilla universal con <code>.vscode/settings.json</code>, <code>copilot-instructions.md</code>, pipeline GitLab CI y script <code>desactivar_gobernanza.bat</code>.", cell_desc)
+            Paragraph("Plantilla universal con <code>.vscode/settings.json</code>, <code>copilot-instructions.md</code>, 3 Skills, GitLab CI y <code>desactivar_gobernanza.bat</code>.", cell_desc)
+        ],
+        [
+            Paragraph("📋 <b>Gap Funcional Determinista (PDF)</b>", cell_title),
+            Paragraph(f'<a href="{pages_base}/PROCEDIMIENTO_GAP_FUNCIONAL_DETERMINISTA_COPILOT.pdf" color="#1d4ed8"><u><b>Descargar Procedimiento ↗</b></u></a>', cell_link),
+            Paragraph("Manual de campo para comparar nuevos requisitos de cliente frente al análisis funcional sin deriva probabilística.", cell_desc)
+        ],
+        [
+            Paragraph("📊 <b>Matriz Excel de Gap (.csv)</b>", cell_title),
+            Paragraph(f'<a href="{pages_base}/plantilla_matriz_gap_funcional.csv" color="#1d4ed8"><u><b>Descargar Plantilla CSV ↗</b></u></a>', cell_link),
+            Paragraph("Tabla de 9 columnas con fórmulas Excel listas para calcular la cobertura determinista y asignar gaps a analistas.", cell_desc)
         ]
     ]
 
-    t = Table(table_data, colWidths=[150, 165, 208])
+    t = Table(table_data, colWidths=[155, 155, 213])
     t.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#f1f5f9")),
         ('ALIGN', (0,0), (-1,-1), 'LEFT'),
         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
-        ('TOPPADDING', (0,0), (-1,-1), 10),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 10),
-        ('LEFTPADDING', (0,0), (-1,-1), 10),
-        ('RIGHTPADDING', (0,0), (-1,-1), 10),
+        ('TOPPADDING', (0,0), (-1,-1), 7),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 7),
+        ('LEFTPADDING', (0,0), (-1,-1), 8),
+        ('RIGHTPADDING', (0,0), (-1,-1), 8),
         ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#cbd5e1")),
         ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor("#f8fafc")]),
     ]))
