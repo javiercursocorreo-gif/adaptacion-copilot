@@ -86,9 +86,9 @@ def generar_html():
     <tbody><tr><td><b>v1.0</b></td><td>27/11/2026</td><td>Borrador de Campo Inicial</td><td>Definición de matriz Excel/CSV (9 columnas), las 5 reglas de determinismo, modelo de porcentajes y combinación Agente + Skill en Copilot.</td></tr></tbody>
   </table>
 
-  <h2>1. El Problema: Por qué la IA cambia los porcentajes en cada ejecución</h2>
+  <h2>1. El Problema: Por qué la IA cambia porcentajes y detecta diferencias distintas en cada ejecución</h2>
   <div class="box-warn">
-    <strong>⚠️ El fallo clásico:</strong> Si pides a Copilot <em>«compara estos requisitos nuevos con mis análisis funcionales y dime qué porcentaje cubren»</em>, cada vez que lances la consulta dará un resultado distinto (hoy 62%, mañana 71%). Esto ocurre porque los modelos de IA son <strong>probabilísticos</strong> y, en Copilot Chat dentro de VS Code, no es posible fijar el parámetro interno <code>temperature=0</code>. Por ello, <strong>el determinismo debe imponerse por diseño de la tabla y fórmula matemática, nunca dejando que la IA «estime a ojo»</strong>.
+    <strong>⚠️ El fallo clásico (Deriva Numérica e Interpretativa):</strong> Si pides a Copilot <em>«compara estos requisitos nuevos con mis análisis funcionales y dime qué porcentaje cubren»</em>, cada vez que lances la consulta no solo dará un porcentaje distinto (hoy 62%, mañana 71%), sino que <strong>puede interpretar y detectar diferencias distintas cada vez</strong> (hoy dar por <code>CUBIERTO</code> un requisito por una frase genérica y mañana marcarlo como <code>PARCIAL</code> al fijarse en otro matiz). Esto ocurre porque el motor es <strong>probabilístico</strong> y en Copilot Chat (VS Code) no se puede fijar <code>temperature=0</code>. Por ello, <strong>la fiabilidad y el determinismo deben imponerse mediante evidencia literal, descomposición atómica y fórmula matemática, nunca confiando en la interpretación libre de la IA</strong>.
   </div>
 
   <h2>2. Estructura de la Tabla Tipo Excel / CSV (<code>plantilla_matriz_gap_funcional.csv</code>)</h2>
@@ -183,8 +183,8 @@ def generar_pdf():
     story.append(Spacer(1, 5))
 
     # 1. El Problema
-    story.append(Paragraph("1. El Problema: Por qué la IA cambia los porcentajes en cada ejecución", h1_style))
-    p_warn = Table([[Paragraph("<b>⚠️ Causa raíz:</b> Si se pide a Copilot <i>«compara estos requisitos nuevos con mis documentos y dime qué porcentaje cubren»</i>, cada ejecución devuelve cifras distintas (hoy 62%, mañana 71%) porque el motor es probabilístico y en Copilot Chat (VS Code) no se puede fijar <code>temperature=0</code>. <b>Solución:</b> imponer el determinismo por diseño de tabla y fórmula matemática en Excel, prohibiendo que la IA estime porcentajes a ojo.", body_style)]], colWidths=[PAGE_WIDTH])
+    story.append(Paragraph("1. El Problema: Por qué la IA cambia porcentajes y detecta diferencias distintas", h1_style))
+    p_warn = Table([[Paragraph("<b>⚠️ Causa raíz (Deriva Numérica e Interpretativa):</b> Si se pide a Copilot <i>«compara estos requisitos nuevos con mis documentos»</i>, en cada ejecución no solo baila el porcentaje (62% vs. 71%), sino que <b>puede ver diferencias distintas cada vez</b> (hoy marcar <code>CUBIERTO</code> por una frase genérica y mañana <code>PARCIAL</code> por un matiz), al ser un motor probabilístico sin <code>temperature=0</code> en VS Code. <b>Justificación de fiabilidad:</b> la <i>Evidencia Literal</i> + <i>Descomposición Atómica</i> + <i>Congelación</i> + <i>Fórmula Excel</i> eliminan esa subjetividad interpretativa.", body_style)]], colWidths=[PAGE_WIDTH])
     p_warn.setStyle(TableStyle([
         ("BACKGROUND", (0,0), (-1,-1), colors.HexColor("#FEF2F2")),
         ("BOX", (0,0), (-1,-1), 0.8, colors.HexColor("#DC2626")),
