@@ -1,0 +1,4 @@
+ID_Req;Requisito_Cliente;Modulo;Doc_Producto_Ref;Evidencia_Literal;Estado_Cobertura;%_Cobertura;Gap_Para_Analistas;Validado_Humano
+REQ-001;[Ejemplo] Permitir exportar el listado de facturas a PDF;Facturacion;AF_Facturacion.md §4.1;"El sistema permite descargar la factura en formato PDF.";CUBIERTO;=SI(F2="CUBIERTO";100%;SI(F2="PARCIAL";50%;0%));;APROBADO
+REQ-002;[Ejemplo] Enviar aviso automatico por correo al vencer el plazo;Notificaciones;AF_Alertas.md §2.3;"Genera aviso en pantalla dentro del panel, sin envio de email.";PARCIAL;=SI(F3="CUBIERTO";100%;SI(F3="PARCIAL";50%;0%));Falta implementar el envio automatico por correo electronico.;PENDIENTE
+REQ-003;[Ejemplo] Integrar firma biometrica en tablet para el cliente;Firma_Digital;NINGUNO;NO EXISTE;GAP_NUEVO;=SI(F4="CUBIERTO";100%;SI(F4="PARCIAL";50%;0%));Modulo completo nuevo: captura de firma en tablet y custodia PDF.;PENDIENTE
