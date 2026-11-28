@@ -40,7 +40,7 @@ class NumberedCanvas(canvas.Canvas):
 
 def build_pdf():
     base_dir = "/Users/externo/Library/Mobile Documents/com~apple~CloudDocs/PERSONAL/CLASES DE TECNOLOGÍA/00. ADAPTACION_EMPRESA_COPILOT"
-    pdf_path = os.path.join(base_dir, "MARCO_DE_GOBERNANZA_Y_ARQUITECTURA_CON_COPILOT.pdf")
+    pdf_path = os.path.join(base_dir, "00. MARCO_DE_GOBERNANZA_Y_ARQUITECTURA_CON_COPILOT.pdf")
     
     doc = SimpleDocTemplate(
         pdf_path,
@@ -149,7 +149,7 @@ def build_pdf():
         ],
         [
             Paragraph("📄 <b>Guía Maestra Oficial (PDF)</b>", cell_title),
-            Paragraph(f'<a href="{pages_base}/ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB.pdf" color="#1d4ed8"><u><b>Descargar PDF (5 págs) ↗</b></u></a>', cell_link),
+            Paragraph(f'<a href="{pages_base}/00.%20ARQUITECTURA_Y_SOLUCIONES_COPILOT_GITLAB.pdf" color="#1d4ed8"><u><b>Descargar PDF (5 págs) ↗</b></u></a>', cell_link),
             Paragraph("Manual integral de gobernanza: mitigación de las 4 D, aislamiento en AppData, parámetros de motor y directivas para GitLab.", cell_desc)
         ],
         [
@@ -159,7 +159,7 @@ def build_pdf():
         ],
         [
             Paragraph("📋 <b>Gap Funcional Determinista (PDF)</b>", cell_title),
-            Paragraph(f'<a href="{pages_base}/PROCEDIMIENTO_GAP_FUNCIONAL_DETERMINISTA_COPILOT.pdf" color="#1d4ed8"><u><b>Descargar Procedimiento ↗</b></u></a>', cell_link),
+            Paragraph(f'<a href="{pages_base}/00.%20PROCEDIMIENTO_GAP_FUNCIONAL_DETERMINISTA_COPILOT.pdf" color="#1d4ed8"><u><b>Descargar Procedimiento ↗</b></u></a>', cell_link),
             Paragraph("Manual de campo para comparar nuevos requisitos de cliente frente al análisis funcional sin deriva probabilística.", cell_desc)
         ],
         [
