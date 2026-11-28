@@ -427,6 +427,7 @@ def generar_html():
                     <li><a href="#f4-2">4.2 Activación Paso a Paso en tu Portátil Corporativo Windows o Mac</a></li>
                     <li><a href="#f4-3">4.3 Matriz Comparativa: La Consultoría Tradicional con IA vs. Metodología Gobernada</a></li>
                     <li><a href="#f4-4">4.4 Capacidades Exclusivas de Antigravity no Disponibles en Copilot</a></li>
+                    <li><a href="#f4-5">4.5 Tabla Comparativa de Protocolos de Gobernanza: Antigravity vs. Copilot (VS Code)</a></li>
                 </ul>
             </li>
         </ul>
@@ -723,6 +724,29 @@ def generar_html():
         <li><strong>Orquestador Multi-Modelo, <code>/grill-me</code>, <em>Zero-Idle Dispatcher</em> y Modo <em>Knowledge Work</em>:</strong> La separación nativa entre modelo planificador y ejecutor (<em>Orchestrator</em>), la entrevista previa <code>/grill-me</code>, los despertadores sin consumo de tokens y la vista simplificada <em>Knowledge Work</em> pertenecen a Antigravity 2.0.</li>
     </ul>
 
+    <h2 id="f4-5">4.5 Tabla Comparativa de Protocolos de Gobernanza: Antigravity vs. Copilot (VS Code)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Protocolo de Gobernanza en Antigravity</th>
+                <th>Implementación Equivalente en Copilot (VS Code + GitLab)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>1. Reglas Globales (<code>AGENTS.md</code>)</strong></td><td><strong>✅ 100% Implementable:</strong> <code>.github/copilot-instructions.md</code> en raíz (compatible con GitLab).</td></tr>
+            <tr><td><strong>2. Cero-Submits (<code>.agents/settings.json</code>)</strong></td><td><strong>✅ 100% Implementable:</strong> <code>.vscode/settings.json</code> local sin alterar la config global de TI.</td></tr>
+            <tr><td><strong>3. Trabajo en Silencio y <code>[COMANDO XX]</code></strong></td><td><strong>✅ 100% Implementable:</strong> Directivas en instrucciones + bloques correlativos bash/PowerShell.</td></tr>
+            <tr><td><strong>4. Protocolo <em>Elephant-Goldfish</em></strong></td><td><strong>✅ 100% Implementable:</strong> Hilo principal (Elefante) + agentes/chats limpios (<code>.github/agents/*.agent.md</code>).</td></tr>
+            <tr><td><strong>5. Skills y Fábrica de Conocimiento (3 Pilares)</strong></td><td><strong>✅ 100% Implementable:</strong> <code>.github/prompts/*.prompt.md</code> (<code>/</code>) + <code>#file</code> + indexador BM25 local.</td></tr>
+            <tr><td><strong>6. Blueprint Previo y <em>Scout ➔ Maker ➔ Checker</em></strong></td><td><strong>✅ 100% Implementable:</strong> Contrato JSON/Excel (<code>evidencias ➔ veredictos ➔ Excel</code>) verificable.</td></tr>
+            <tr><td><strong>7. Carpeta Limpia (<em>Zero-Noise</em>) y Monorepo</strong></td><td><strong>✅ 100% Implementable:</strong> Apertura en raíz única o carpeta aislada por piloto privado.</td></tr>
+            <tr><td><strong>8. «Solo Borradores», <em>Generative UI</em> y Pages</strong></td><td><strong>✅ 100% Implementable:</strong> Borradores previos + dashboards HTML publicados en <strong>GitLab Pages</strong>.</td></tr>
+            <tr><td><strong>9. Enjambres (<code>/swarm</code>) y <em>Git Worktrees</em></strong></td><td><strong>❌ No nativo:</strong> Copilot opera como agente único secuencial (sin tablón paralelo multi-agente).</td></tr>
+            <tr><td><strong>10. Navegador Autónomo, Agentes Remotos y Voz</strong></td><td><strong>❌ No disponible:</strong> Exclusivo de Antigravity (sin <em>Pin &amp; Comment</em>, VMs nube ni dictado paralelo).</td></tr>
+            <tr><td><strong>11. Workspace, <code>/btw</code>, <code>Cmd+L</code>, <em>Orchestrator</em> y <code>/grill-me</code></strong></td><td><strong>❌ No disponible:</strong> Propio de Antigravity (se suple con prompts explícitos en Copilot Chat).</td></tr>
+        </tbody>
+    </table>
+
     <footer>
         Guía de Gobernanza y Productividad con Copilot & GitLab para Consultores Senior • Marco Metodológico Corporativo
     </footer>
@@ -934,7 +958,8 @@ def compilar_pdf_reportlab():
         Paragraph("4.1 La Plantilla Universal de Consultoría (WORKSPACE-COPILOT-GITLAB-PLANTILLA.zip)", toc_sub),
         Paragraph("4.2 Activación Paso a Paso en tu Portátil Corporativo Windows o Mac", toc_sub),
         Paragraph("4.3 Matriz Comparativa: La Consultoría Tradicional con IA vs. Metodología Gobernada", toc_sub),
-        Paragraph("4.4 Capacidades Exclusivas de Antigravity no Disponibles en Copilot", toc_sub)
+        Paragraph("4.4 Capacidades Exclusivas de Antigravity no Disponibles en Copilot", toc_sub),
+        Paragraph("4.5 Tabla Comparativa de Protocolos de Gobernanza: Antigravity vs. Copilot (VS Code)", toc_sub)
     ]
     t_toc = Table([[p_toc]], colWidths=[PAGE_WIDTH])
     t_toc.setStyle(TableStyle([
@@ -1270,6 +1295,37 @@ def compilar_pdf_reportlab():
     # 4.4 CAPACIDADES EXCLUSIVAS DE ANTIGRAVITY NO DISPONIBLES EN COPILOT
     story.append(Paragraph("4.4 Capacidades Exclusivas de Antigravity no Disponibles en Copilot", h1_style))
     story.append(Paragraph("Con total transparencia sobre el alcance de cada entorno, estas capacidades actuales de <b>Antigravity</b> no están disponibles en <b>Copilot (VS Code)</b>: <b>1) Enjambres (<code>/swarm</code>)</b> en copias aisladas; <b>2) Navegador autónomo (<i>Pin &amp; Comment</i>)</b>; <b>3) Agentes Remotos</b> y <b>Modo Voz paralelo</b>; <b>4) Google Workspace / <i>Tarea</i></b>; <b>5) Pensamiento ajustable, <code>/btw</code>, <code>Cmd+L</code> y Plan B API Key</b>; y <b>6) Orquestador multi-modelo, <code>/grill-me</code>, <i>Zero-Idle Dispatcher</i> y modo <i>Knowledge Work</i></b>.", body_style))
+    story.append(Spacer(1, 5))
+
+    # 4.5 TABLA COMPARATIVA DE PROTOCOLOS DE GOBERNANZA: ANTIGRAVITY VS COPILOT
+    story.append(Paragraph("4.5 Tabla Comparativa de Protocolos de Gobernanza: Antigravity vs. Copilot (VS Code)", h1_style))
+    table_gov_data = [
+        [Paragraph("Protocolo de Gobernanza (Antigravity)", table_header), Paragraph("Implementación en Copilot (VS Code + GitLab)", table_header)],
+        [Paragraph("<b>1. Reglas Globales (<code>AGENTS.md</code>)</b>", table_cell_bold), Paragraph("<b>✅ 100%:</b> <code>.github/copilot-instructions.md</code> en raíz (compatible con GitLab).", table_cell)],
+        [Paragraph("<b>2. Cero-Submits (<code>.agents/settings.json</code>)</b>", table_cell_bold), Paragraph("<b>✅ 100%:</b> <code>.vscode/settings.json</code> local sin alterar la config global de TI.", table_cell)],
+        [Paragraph("<b>3. Trabajo en Silencio y <code>[COMANDO XX]</code></b>", table_cell_bold), Paragraph("<b>✅ 100%:</b> Directivas en instrucciones + bloques correlativos bash/PowerShell.", table_cell)],
+        [Paragraph("<b>4. Protocolo <i>Elephant-Goldfish</i></b>", table_cell_bold), Paragraph("<b>✅ 100%:</b> Hilo principal (Elefante) + agentes/chats limpios (<code>.github/agents/*.agent.md</code>).", table_cell)],
+        [Paragraph("<b>5. Skills y Fábrica de Conocimiento</b>", table_cell_bold), Paragraph("<b>✅ 100%:</b> <code>.github/prompts/*.prompt.md</code> (<code>/</code>) + <code>#file</code> + indexador BM25 local.", table_cell)],
+        [Paragraph("<b>6. Blueprint Previo y <i>Scout➔Maker➔Checker</i></b>", table_cell_bold), Paragraph("<b>✅ 100%:</b> Contrato JSON/Excel (<code>evidencias ➔ veredictos ➔ Excel</code>) verificable.", table_cell)],
+        [Paragraph("<b>7. Carpeta Limpia (<i>Zero-Noise</i>) y Monorepo</b>", table_cell_bold), Paragraph("<b>✅ 100%:</b> Apertura en raíz única o carpeta aislada por piloto privado.", table_cell)],
+        [Paragraph("<b>8. «Solo Borradores», <i>Generative UI</i> y Pages</b>", table_cell_bold), Paragraph("<b>✅ 100%:</b> Borradores previos + dashboards HTML publicados en <b>GitLab Pages</b>.", table_cell)],
+        [Paragraph("<b>9. Enjambres (<code>/swarm</code>) y <i>Git Worktrees</i></b>", table_cell_bold), Paragraph("<b>❌ No nativo:</b> Copilot opera como agente único secuencial (sin tablón paralelo).", table_cell)],
+        [Paragraph("<b>10. Navegador Autónomo, Remotos y Voz</b>", table_cell_bold), Paragraph("<b>❌ No disponible:</b> Exclusivo de Antigravity (sin <i>Pin &amp; Comment</i>, VMs nube ni dictado paralelo).", table_cell)],
+        [Paragraph("<b>11. Workspace, <code>/btw</code>, <code>Cmd+L</code>, <i>Orchestrator</i>, <code>/grill-me</code></b>", table_cell_bold), Paragraph("<b>❌ No disponible:</b> Propio de Antigravity (se suple con prompts explícitos en Copilot Chat).", table_cell)]
+    ]
+    t_gov = Table(table_gov_data, colWidths=[195, 328.27], repeatRows=1)
+    t_gov.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#1E3A8A')),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
+        ('BOX', (0,0), (-1,-1), 0.8, colors.HexColor('#94A3B8')),
+        ('INNERGRID', (0,0), (-1,-1), 0.5, colors.HexColor('#CBD5E1')),
+        ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor('#F8FAFC')]),
+        ('TOPPADDING', (0,0), (-1,-1), 2.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
+        ('LEFTPADDING', (0,0), (-1,-1), 4),
+        ('RIGHTPADDING', (0,0), (-1,-1), 4),
+    ]))
+    story.append(t_gov)
 
     doc.build(story, canvasmaker=NumberedCanvas)
     print(f"✅ PDF generado para consultoría: {PDF_FILE}", flush=True)
